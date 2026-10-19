@@ -1,0 +1,31 @@
+System files
+
+.DS_Store Thumbs.db Desktop.ini
+
+.NET build output
+
+[Bb]in/ [Oo]bj/ artifacts/ *.pdb *.cachefile
+
+IDEs and editors
+
+.vs/ .vscode/ .idea/ _ReSharper*/ *.suo *.user *.userosscache *.sln.docstates *.swp *.swo *~
+
+Logs
+
+*.log
+
+Temporary and backup files
+
+*.bak *.tmp
+
+MonoGame generated content
+
+**/CompiledContent/
+
+NuGet packages (if stored locally)
+
+packages/
+
+OS-specific files
+
+.Trash-*

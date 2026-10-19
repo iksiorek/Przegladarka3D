@@ -1,0 +1,9 @@
+﻿<Solution>
+  <Folder Name="/Platforms/">
+    <Project Path="Przegladarka3D.DesktopGL/Przegladarka3D.DesktopGL.csproj" />
+    <Project Path="Przegladarka3D.DesktopVK/Przegladarka3D.DesktopVK.csproj" />
+    <Project Path="Przegladarka3D.WindowsDX12/Przegladarka3D.WindowsDX12.csproj" />
+  </Folder>
+  <Project Path="Przegladarka3D.Content/Przegladarka3D.Content.csproj" />
+  <Project Path="Przegladarka3D.Core/Przegladarka3D.Core.csproj" />
+</Solution>

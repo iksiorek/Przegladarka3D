@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "Przegladarka3D.Core/1.0.0": {
+        "dependencies": {
+          "MonoGame.Framework.Native": "3.8.5"
+        },
+        "runtime": {
+          "Przegladarka3D.Core.dll": {}
+        },
+        "resources": {
+          "es-ES/Przegladarka3D.Core.resources.dll": {
+            "locale": "es-ES"
+          },
+          "fr-FR/Przegladarka3D.Core.resources.dll": {
+            "locale": "fr-FR"
+          }
+        }
+      },
+      "MonoGame.Framework.Native/3.8.5": {
+        "runtime": {
+          "lib/netstandard2.1/MonoGame.Framework.dll": {
+            "assemblyVersion": "3.8.5.0",
+            "fileVersion": "3.8.5.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Przegladarka3D.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MonoGame.Framework.Native/3.8.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fobFZ8nfhCmt98HD0FNX+nP1IOoJ2N/Zk/JHY6148i4CEpIThv+OJeiR8W+zba+Xz5NkPC2pmWHRum0jN37boQ==",
+      "path": "monogame.framework.native/3.8.5",
+      "hashPath": "monogame.framework.native.3.8.5.nupkg.sha512"
+    }
+  }
+}

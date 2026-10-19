@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Przegladarka3D (DesktopGL)",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Przegladarka3D.DesktopGL/Przegladarka3D.DesktopGL.csproj",
+            "preLaunchTask": "Build: Przegladarka3D.DesktopGL"
+        },
+        {
+            "name": "Przegladarka3D (DesktopVK)",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Przegladarka3D.DesktopVK/Przegladarka3D.DesktopVK.csproj",
+            "preLaunchTask": "Build: Przegladarka3D.DesktopVK"
+        },
+        {
+            "name": "Przegladarka3D (WindowsDX12)",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/Przegladarka3D.WindowsDX12/Przegladarka3D.WindowsDX12.csproj",
+            "preLaunchTask": "Build: Przegladarka3D.WindowsDX12"
+        },
+        {
+            "name": "Przegladarka3D (Android / iOS)",
+            "type": "maui",
+            "request": "launch",
+            "preLaunchTask": "maui: Build"
+        }
+    ]
+}
