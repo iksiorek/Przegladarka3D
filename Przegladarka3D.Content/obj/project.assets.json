@@ -1,0 +1,2072 @@
+{
+  "version": 3,
+  "targets": {
+    "net10.0": {
+      "AssimpNetter/6.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/AssimpNetter.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/AssimpNetter.dll": {}
+        },
+        "build": {
+          "build/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/osx-x64/native/_._": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          }
+        }
+      },
+      "BCnEncoder.Net/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.HighPerformance": "7.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.1/BCnEncoder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/BCnEncoder.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "LibKTX/0.9.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/KtxSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/KtxSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Libuv/1.9.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1"
+        },
+        "runtimeTargets": {
+          "runtimes/debian-x64/native/libuv.so": {
+            "assetType": "native",
+            "rid": "debian-x64"
+          },
+          "runtimes/fedora-x64/native/libuv.so": {
+            "assetType": "native",
+            "rid": "fedora-x64"
+          },
+          "runtimes/opensuse-x64/native/libuv.so": {
+            "assetType": "native",
+            "rid": "opensuse-x64"
+          },
+          "runtimes/osx/native/libuv.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/rhel-x64/native/libuv.so": {
+            "assetType": "native",
+            "rid": "rhel-x64"
+          },
+          "runtimes/win7-arm/native/libuv.dll": {
+            "assetType": "native",
+            "rid": "win7-arm"
+          },
+          "runtimes/win7-x64/native/libuv.dll": {
+            "assetType": "native",
+            "rid": "win7-x64"
+          },
+          "runtimes/win7-x86/native/libuv.dll": {
+            "assetType": "native",
+            "rid": "win7-x86"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
+        "type": "package"
+      },
+      "Microsoft.CodeAnalysis.Common/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.CSharp/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Common": "[1.3.0]"
+        },
+        "compile": {
+          "lib/netstandard1.3/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.VisualBasic/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Common": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.VisualBasic.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.NETCore.App/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Libuv": "1.9.1",
+          "Microsoft.CodeAnalysis.CSharp": "1.3.0",
+          "Microsoft.CodeAnalysis.VisualBasic": "1.3.0",
+          "Microsoft.NETCore.DotNetHostPolicy": "1.0.5",
+          "Microsoft.NETCore.Platforms": "1.0.2",
+          "Microsoft.NETCore.Runtime.CoreCLR": "1.0.7",
+          "NETStandard.Library": "1.6.0",
+          "runtime.native.System.Security.Cryptography": "4.0.1"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/_._": {}
+        }
+      },
+      "Microsoft.NETCore.DotNetHost/1.0.1": {
+        "type": "package"
+      },
+      "Microsoft.NETCore.DotNetHostPolicy/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.DotNetHostResolver": "1.0.1"
+        }
+      },
+      "Microsoft.NETCore.DotNetHostResolver/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.DotNetHost": "1.0.1"
+        }
+      },
+      "Microsoft.NETCore.Jit/1.0.7": {
+        "type": "package"
+      },
+      "Microsoft.NETCore.Platforms/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.NETCore.Runtime.CoreCLR/1.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Jit": "1.0.7",
+          "Microsoft.NETCore.Windows.ApiSets": "1.0.1"
+        }
+      },
+      "Microsoft.NETCore.Targets/1.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
+        "type": "package"
+      },
+      "Microsoft.Toolkit.HighPerformance/7.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.Toolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Toolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonoGame.Framework.Content.Pipeline/3.8.5": {
+        "type": "package",
+        "dependencies": {
+          "AssimpNetter": "6.0.4",
+          "BCnEncoder.Net": "2.1.0",
+          "LibKTX": "0.9.2",
+          "MonoGame.Library.FreeType": "2.13.2.3",
+          "MonoGame.Library.MojoShader": "1.0.0.5",
+          "MonoGame.Tool.Basisu": "2.0.2.1",
+          "MonoGame.Tool.Crunch": "1.0.4.7",
+          "MonoGame.Tool.Dxc": "1.8.2505.11",
+          "MonoGame.Tool.FFmpeg": "7.0.0.10",
+          "MonoGame.Tool.FFprobe": "7.0.0.10",
+          "SharpDX": "4.0.1",
+          "SharpDX.D3DCompiler": "4.0.1",
+          "System.CommandLine": "2.0.0-beta4.22272.1",
+          "YamlDotNet": "16.3.0"
+        },
+        "compile": {
+          "lib/net8.0/MonoGame.Framework.Content.Pipeline.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Framework.Content.Pipeline.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libmgpipeline.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libmgpipeline.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx/native/libmgpipeline.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win-arm64/native/mgpipeline.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/mgpipeline.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "MonoGame.Framework.Native/3.8.5": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MonoGame.Framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MonoGame.Framework.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MonoGame.Library.Assimp/6.0.5.1": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libassimp.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libassimp.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx/native/libassimp.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win-arm64/native/assimp.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/assimp.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "MonoGame.Library.FreeType/2.13.2.5": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libfreetype.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libfreetype.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx/native/libfreetype.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win-arm64/native/freetype.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/freetype.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "MonoGame.Library.MojoShader/1.0.0.7": {
+        "type": "package",
+        "runtimeTargets": {
+          "runtimes/linux-arm64/native/libmojoshader.so": {
+            "assetType": "native",
+            "rid": "linux-arm64"
+          },
+          "runtimes/linux-x64/native/libmojoshader.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx/native/libmojoshader.dylib": {
+            "assetType": "native",
+            "rid": "osx"
+          },
+          "runtimes/win-arm64/native/mojoshader.dll": {
+            "assetType": "native",
+            "rid": "win-arm64"
+          },
+          "runtimes/win-x64/native/mojoshader.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "MonoGame.Tool.Basisu/2.0.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.Basisu.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.Basisu.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.Basisu.targets": {}
+        }
+      },
+      "MonoGame.Tool.Crunch/1.0.4.8": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.Crunch.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.Crunch.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.Crunch.targets": {}
+        }
+      },
+      "MonoGame.Tool.Dxc/1.9.2607.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.Dxc.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.Dxc.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.Dxc.targets": {}
+        }
+      },
+      "MonoGame.Tool.FFmpeg/7.0.0.11": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.FFmpeg.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.FFmpeg.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.FFmpeg.targets": {}
+        }
+      },
+      "MonoGame.Tool.FFprobe/7.0.0.11": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.FFprobe.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.FFprobe.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.FFprobe.targets": {}
+        }
+      },
+      "NETStandard.Library/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1"
+        }
+      },
+      "runtime.native.System.Security.Cryptography/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.2",
+          "Microsoft.NETCore.Targets": "1.0.3"
+        },
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "SharpDX/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.5"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/SharpDX.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/SharpDX.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SharpDX.D3DCompiler/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.5",
+          "SharpDX": "4.0.1"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/SharpDX.D3DCompiler.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/SharpDX.D3DCompiler.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.CommandLine/2.0.0-beta4.22272.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.CommandLine.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.CommandLine.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "resource": {
+          "lib/net6.0/cs/System.CommandLine.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net6.0/de/System.CommandLine.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0/es/System.CommandLine.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0/fr/System.CommandLine.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0/it/System.CommandLine.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net6.0/ja/System.CommandLine.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0/ko/System.CommandLine.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0/pl/System.CommandLine.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net6.0/pt-BR/System.CommandLine.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0/ru/System.CommandLine.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0/tr/System.CommandLine.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0/zh-Hans/System.CommandLine.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net6.0/zh-Hant/System.CommandLine.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "YamlDotNet/16.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    },
+    "net10.0/linux-x64": {
+      "AssimpNetter/6.0.5": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/AssimpNetter.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/AssimpNetter.dll": {}
+        },
+        "native": {
+          "runtimes/linux-x64/native/_._": {}
+        },
+        "build": {
+          "build/_._": {}
+        }
+      },
+      "BCnEncoder.Net/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Toolkit.HighPerformance": "7.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.1/BCnEncoder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/BCnEncoder.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "LibKTX/0.9.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/KtxSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/KtxSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Libuv/1.9.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1"
+        }
+      },
+      "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
+        "type": "package"
+      },
+      "Microsoft.CodeAnalysis.Common/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.CSharp/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Common": "[1.3.0]"
+        },
+        "compile": {
+          "lib/netstandard1.3/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.VisualBasic/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Common": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/_._": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.CodeAnalysis.VisualBasic.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.NETCore.App/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Libuv": "1.9.1",
+          "Microsoft.CodeAnalysis.CSharp": "1.3.0",
+          "Microsoft.CodeAnalysis.VisualBasic": "1.3.0",
+          "Microsoft.NETCore.DotNetHostPolicy": "1.0.5",
+          "Microsoft.NETCore.Platforms": "1.0.2",
+          "Microsoft.NETCore.Runtime.CoreCLR": "1.0.7",
+          "NETStandard.Library": "1.6.0",
+          "runtime.native.System.Security.Cryptography": "4.0.1"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/_._": {}
+        }
+      },
+      "Microsoft.NETCore.DotNetHost/1.0.1": {
+        "type": "package"
+      },
+      "Microsoft.NETCore.DotNetHostPolicy/1.0.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.DotNetHostResolver": "1.0.1"
+        }
+      },
+      "Microsoft.NETCore.DotNetHostResolver/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.DotNetHost": "1.0.1"
+        }
+      },
+      "Microsoft.NETCore.Jit/1.0.7": {
+        "type": "package"
+      },
+      "Microsoft.NETCore.Platforms/1.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.NETCore.Runtime.CoreCLR/1.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Jit": "1.0.7",
+          "Microsoft.NETCore.Windows.ApiSets": "1.0.1"
+        }
+      },
+      "Microsoft.NETCore.Targets/1.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
+        "type": "package"
+      },
+      "Microsoft.Toolkit.HighPerformance/7.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Microsoft.Toolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.Toolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "MonoGame.Framework.Content.Pipeline/3.8.5": {
+        "type": "package",
+        "dependencies": {
+          "AssimpNetter": "6.0.4",
+          "BCnEncoder.Net": "2.1.0",
+          "LibKTX": "0.9.2",
+          "MonoGame.Library.FreeType": "2.13.2.3",
+          "MonoGame.Library.MojoShader": "1.0.0.5",
+          "MonoGame.Tool.Basisu": "2.0.2.1",
+          "MonoGame.Tool.Crunch": "1.0.4.7",
+          "MonoGame.Tool.Dxc": "1.8.2505.11",
+          "MonoGame.Tool.FFmpeg": "7.0.0.10",
+          "MonoGame.Tool.FFprobe": "7.0.0.10",
+          "SharpDX": "4.0.1",
+          "SharpDX.D3DCompiler": "4.0.1",
+          "System.CommandLine": "2.0.0-beta4.22272.1",
+          "YamlDotNet": "16.3.0"
+        },
+        "compile": {
+          "lib/net8.0/MonoGame.Framework.Content.Pipeline.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Framework.Content.Pipeline.dll": {
+            "related": ".xml"
+          }
+        },
+        "native": {
+          "runtimes/linux-x64/native/libmgpipeline.so": {}
+        }
+      },
+      "MonoGame.Framework.Native/3.8.5": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MonoGame.Framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MonoGame.Framework.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "MonoGame.Library.Assimp/6.0.5.1": {
+        "type": "package",
+        "native": {
+          "runtimes/linux-x64/native/libassimp.so": {}
+        }
+      },
+      "MonoGame.Library.FreeType/2.13.2.5": {
+        "type": "package",
+        "native": {
+          "runtimes/linux-x64/native/libfreetype.so": {}
+        }
+      },
+      "MonoGame.Library.MojoShader/1.0.0.7": {
+        "type": "package",
+        "native": {
+          "runtimes/linux-x64/native/libmojoshader.so": {}
+        }
+      },
+      "MonoGame.Tool.Basisu/2.0.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.Basisu.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.Basisu.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.Basisu.targets": {}
+        }
+      },
+      "MonoGame.Tool.Crunch/1.0.4.8": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.Crunch.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.Crunch.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.Crunch.targets": {}
+        }
+      },
+      "MonoGame.Tool.Dxc/1.9.2607.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.Dxc.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.Dxc.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.Dxc.targets": {}
+        }
+      },
+      "MonoGame.Tool.FFmpeg/7.0.0.11": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.FFmpeg.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.FFmpeg.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.FFmpeg.targets": {}
+        }
+      },
+      "MonoGame.Tool.FFprobe/7.0.0.11": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/MonoGame.Tool.FFprobe.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/MonoGame.Tool.FFprobe.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Tool.FFprobe.targets": {}
+        }
+      },
+      "NETStandard.Library/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1"
+        }
+      },
+      "runtime.native.System.Security.Cryptography/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.2",
+          "Microsoft.NETCore.Targets": "1.0.3"
+        },
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "SharpDX/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.5"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/SharpDX.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/SharpDX.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SharpDX.D3DCompiler/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.5",
+          "SharpDX": "4.0.1"
+        },
+        "compile": {
+          "lib/netcoreapp1.0/SharpDX.D3DCompiler.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/SharpDX.D3DCompiler.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.CommandLine/2.0.0-beta4.22272.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/System.CommandLine.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/System.CommandLine.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "resource": {
+          "lib/net6.0/cs/System.CommandLine.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net6.0/de/System.CommandLine.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net6.0/es/System.CommandLine.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net6.0/fr/System.CommandLine.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net6.0/it/System.CommandLine.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net6.0/ja/System.CommandLine.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net6.0/ko/System.CommandLine.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net6.0/pl/System.CommandLine.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net6.0/pt-BR/System.CommandLine.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net6.0/ru/System.CommandLine.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net6.0/tr/System.CommandLine.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net6.0/zh-Hans/System.CommandLine.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net6.0/zh-Hant/System.CommandLine.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "YamlDotNet/16.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/YamlDotNet.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AssimpNetter/6.0.5": {
+      "sha512": "WeX1uBN3cUA4+zYfdmdhVpuq8xiiGuW1fwXVt2+BqpstZAFV683csP/J50IUpii2CANwKWEnUKo2uvqoIN3ZpQ==",
+      "type": "package",
+      "path": "assimpnetter/6.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "AssimpNet Documentation (October 2018).chm",
+        "ChangeLog.txt",
+        "License.txt",
+        "README.md",
+        "assimpnetter.6.0.5.nupkg.sha512",
+        "assimpnetter.nuspec",
+        "build/AssimpNetter.targets",
+        "lib/net472/AssimpNet.xml",
+        "lib/net472/AssimpNetter.dll",
+        "lib/net48/AssimpNet.xml",
+        "lib/net48/AssimpNetter.dll",
+        "lib/net5.0/AssimpNet.xml",
+        "lib/net5.0/AssimpNetter.dll",
+        "lib/net6.0/AssimpNet.xml",
+        "lib/net6.0/AssimpNetter.dll",
+        "lib/netstandard2.1/AssimpNet.xml",
+        "lib/netstandard2.1/AssimpNetter.dll",
+        "logo.png",
+        "runtimes/linux-arm64/native/libassimp.so",
+        "runtimes/linux-x64/native/libassimp.so",
+        "runtimes/osx-arm64/native/libassimp.dylib",
+        "runtimes/osx-x64/native/libassimp.dylib",
+        "runtimes/win-arm64/native/assimp.dll",
+        "runtimes/win-x64/native/assimp.dll",
+        "runtimes/win-x86/native/assimp.dll"
+      ]
+    },
+    "BCnEncoder.Net/2.1.0": {
+      "sha512": "bBKYUDhpYenmp8vy5BVUHmS2LFym0NMga9V+S1eMJ+4zQLBwDw63Bs83AKOyqBKC2AqqgxXdTFA2a2V+SmGoIw==",
+      "type": "package",
+      "path": "bcnencoder.net/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcnencoder.net.2.1.0.nupkg.sha512",
+        "bcnencoder.net.nuspec",
+        "lib/netstandard2.1/BCnEncoder.dll",
+        "lib/netstandard2.1/BCnEncoder.xml"
+      ]
+    },
+    "LibKTX/0.9.2": {
+      "sha512": "Koost9wf/iKsgIgqonMsHFV62HpOR4bUBy77YlYer8EtQm67/ZsSxU/dHAEJhkBVvlsTeBRCotsrQLWn8sehig==",
+      "type": "package",
+      "path": "libktx/0.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/KtxSharp.dll",
+        "lib/netstandard2.0/KtxSharp.xml",
+        "libktx.0.9.2.nupkg.sha512",
+        "libktx.nuspec"
+      ]
+    },
+    "Libuv/1.9.1": {
+      "sha512": "uqX2Frwf9PW8MaY7PRNY6HM5BpW1D8oj1EdqzrmbEFD5nH63Yat3aEjN/tws6Tw6Fk7LwmLBvtUh32tTeTaHiA==",
+      "type": "package",
+      "path": "libuv/1.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "libuv.1.9.1.nupkg.sha512",
+        "libuv.nuspec",
+        "runtimes/debian-x64/native/libuv.so",
+        "runtimes/fedora-x64/native/libuv.so",
+        "runtimes/opensuse-x64/native/libuv.so",
+        "runtimes/osx/native/libuv.dylib",
+        "runtimes/rhel-x64/native/libuv.so",
+        "runtimes/win7-arm/native/libuv.dll",
+        "runtimes/win7-x64/native/libuv.dll",
+        "runtimes/win7-x86/native/libuv.dll"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
+      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.analyzers/1.1.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.rtf",
+        "analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll",
+        "analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.Analyzers.dll",
+        "analyzers/dotnet/vb/Microsoft.CodeAnalysis.Analyzers.dll",
+        "analyzers/dotnet/vb/Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll",
+        "microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
+        "microsoft.codeanalysis.analyzers.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Common/1.3.0": {
+      "sha512": "V09G35cs0CT1C4Dr1IEOh8IGfnWALEVAOO5JXsqagxXwmYR012TlorQ+vx2eXxfZRKs3gAS/r92gN9kRBLba5A==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.common/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.rtf",
+        "lib/net45/Microsoft.CodeAnalysis.dll",
+        "lib/net45/Microsoft.CodeAnalysis.xml",
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.dll",
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.xml",
+        "microsoft.codeanalysis.common.1.3.0.nupkg.sha512",
+        "microsoft.codeanalysis.common.nuspec"
+      ]
+    },
+    "Microsoft.CodeAnalysis.CSharp/1.3.0": {
+      "sha512": "BgWDIAbSFsHuGeLSn/rljLi51nXqkSo4DZ0qEIrHyPVasrhxEVq7aV8KKZ3HEfSFB+GIhBmOogE+mlOLYg19eg==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.csharp/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.rtf",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/net45/Microsoft.CodeAnalysis.CSharp.xml",
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.CSharp.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.CSharp.xml",
+        "microsoft.codeanalysis.csharp.1.3.0.nupkg.sha512",
+        "microsoft.codeanalysis.csharp.nuspec"
+      ]
+    },
+    "Microsoft.CodeAnalysis.VisualBasic/1.3.0": {
+      "sha512": "Sf3k8PkTkWqBmXnnblJbvb7ewO6mJzX6WO2t7m04BmOY5qBq6yhhyXnn/BMM+QCec3Arw3X35Zd8f9eBql0qgg==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.visualbasic/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.rtf",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "lib/net45/Microsoft.CodeAnalysis.VisualBasic.xml",
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "lib/netstandard1.3/Microsoft.CodeAnalysis.VisualBasic.xml",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "lib/portable-net45+win8/Microsoft.CodeAnalysis.VisualBasic.xml",
+        "microsoft.codeanalysis.visualbasic.1.3.0.nupkg.sha512",
+        "microsoft.codeanalysis.visualbasic.nuspec"
+      ]
+    },
+    "Microsoft.NETCore.App/1.0.5": {
+      "sha512": "rqd+4QNUIdrauKaP8KVo2Ut5OeEGoyOsAMZr7u1IEtSRx5LeA1omVCLpY0TJ5Z47jfMm/MRuD/RG5Ahg8WwX2w==",
+      "type": "package",
+      "path": "microsoft.netcore.app/1.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netcoreapp1.0/_._",
+        "microsoft.netcore.app.1.0.5.nupkg.sha512",
+        "microsoft.netcore.app.nuspec"
+      ]
+    },
+    "Microsoft.NETCore.DotNetHost/1.0.1": {
+      "sha512": "uaMgykq6AckP3hZW4dsD6zjocxyXPz0tcTl8OX7mlSUWsyFXdtf45sjdwI0JIHxt3gnI6GihAlOAwYK8HE4niQ==",
+      "type": "package",
+      "path": "microsoft.netcore.dotnethost/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "microsoft.netcore.dotnethost.1.0.1.nupkg.sha512",
+        "microsoft.netcore.dotnethost.nuspec",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.NETCore.DotNetHostPolicy/1.0.5": {
+      "sha512": "KR8e8+lh/YnhD0wDCMBRUjn0/VnryxHbu6I61U6m7PAyz9HbRr+iX3BYL925OHMFuFmk1atc/RRGjGtVOVrvrg==",
+      "type": "package",
+      "path": "microsoft.netcore.dotnethostpolicy/1.0.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "microsoft.netcore.dotnethostpolicy.1.0.5.nupkg.sha512",
+        "microsoft.netcore.dotnethostpolicy.nuspec",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.NETCore.DotNetHostResolver/1.0.1": {
+      "sha512": "GEXgpAHB9E0OhfcmNJ664Xcd2bJkz2qkGIAFmCgEI5ANlQy4qEEmBVfUqA+Z9HB85ZwWxZc1eIJ6fxdxcjrctg==",
+      "type": "package",
+      "path": "microsoft.netcore.dotnethostresolver/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "microsoft.netcore.dotnethostresolver.1.0.1.nupkg.sha512",
+        "microsoft.netcore.dotnethostresolver.nuspec",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.NETCore.Jit/1.0.7": {
+      "sha512": "pNYSZFvX14x4ubToTLxj9O9xNIEg1kHaL6gkMr8urWKIY65cu8272KRlT3cgJCKLbzFO0XZDjvPlRBCFrbJm7Q==",
+      "type": "package",
+      "path": "microsoft.netcore.jit/1.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "microsoft.netcore.jit.1.0.7.nupkg.sha512",
+        "microsoft.netcore.jit.nuspec",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.NETCore.Platforms/1.0.2": {
+      "sha512": "fRHBvQs9Z/ZSUAqaSotK1UPol/lwybTgdeTXR4eVw3rVDgzUnWGTUsK0A418oR7NrimNL1TQu/IM0RDa26s0qg==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.platforms.1.0.2.nupkg.sha512",
+        "microsoft.netcore.platforms.nuspec",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.NETCore.Runtime.CoreCLR/1.0.7": {
+      "sha512": "t81co+R1xDubSQDDYP+zddd1Eya7xGeN2XlJMSsNFUCKRm35/5u8knnXOQTdfE1nf6bYqPROt18WlhdZui1FLA==",
+      "type": "package",
+      "path": "microsoft.netcore.runtime.coreclr/1.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "microsoft.netcore.runtime.coreclr.1.0.7.nupkg.sha512",
+        "microsoft.netcore.runtime.coreclr.nuspec",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.NETCore.Targets/1.0.3": {
+      "sha512": "IRUVJ1jXkdvxokYfxw5o2+QCcWWVxLMzcwsRSpmNboslZR0WYhFgJihT53R/tkEDiBjlhb99XxYMWfb9Q6nyVw==",
+      "type": "package",
+      "path": "microsoft.netcore.targets/1.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "microsoft.netcore.targets.1.0.3.nupkg.sha512",
+        "microsoft.netcore.targets.nuspec",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
+      "sha512": "SaToCvvsGMxTgtLv/BrFQ5IFMPRE1zpWbnqbpwykJa8W5XiX82CXI6K2o7yf5xS7EP6t/JzFLV0SIDuWpvBZVw==",
+      "type": "package",
+      "path": "microsoft.netcore.windows.apisets/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "microsoft.netcore.windows.apisets.1.0.1.nupkg.sha512",
+        "microsoft.netcore.windows.apisets.nuspec",
+        "runtime.json"
+      ]
+    },
+    "Microsoft.Toolkit.HighPerformance/7.0.2": {
+      "sha512": "tG6v0AhDw/yJMtiH/tI4F6I/+sNIfu4++6WFfN73FyNcPh31et33w45wo8Lx1sfxcfLtkYk+w2fvU/MubYg4VQ==",
+      "type": "package",
+      "path": "microsoft.toolkit.highperformance/7.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "images/nuget.png",
+        "lib/net5.0/Microsoft.Toolkit.HighPerformance.dll",
+        "lib/net5.0/Microsoft.Toolkit.HighPerformance.pdb",
+        "lib/net5.0/Microsoft.Toolkit.HighPerformance.xml",
+        "lib/netcoreapp2.1/Microsoft.Toolkit.HighPerformance.dll",
+        "lib/netcoreapp2.1/Microsoft.Toolkit.HighPerformance.pdb",
+        "lib/netcoreapp2.1/Microsoft.Toolkit.HighPerformance.xml",
+        "lib/netcoreapp3.1/Microsoft.Toolkit.HighPerformance.dll",
+        "lib/netcoreapp3.1/Microsoft.Toolkit.HighPerformance.pdb",
+        "lib/netcoreapp3.1/Microsoft.Toolkit.HighPerformance.xml",
+        "lib/netstandard1.4/Microsoft.Toolkit.HighPerformance.dll",
+        "lib/netstandard1.4/Microsoft.Toolkit.HighPerformance.pdb",
+        "lib/netstandard1.4/Microsoft.Toolkit.HighPerformance.xml",
+        "lib/netstandard2.0/Microsoft.Toolkit.HighPerformance.dll",
+        "lib/netstandard2.0/Microsoft.Toolkit.HighPerformance.pdb",
+        "lib/netstandard2.0/Microsoft.Toolkit.HighPerformance.xml",
+        "lib/netstandard2.1/Microsoft.Toolkit.HighPerformance.dll",
+        "lib/netstandard2.1/Microsoft.Toolkit.HighPerformance.pdb",
+        "lib/netstandard2.1/Microsoft.Toolkit.HighPerformance.xml",
+        "license.md",
+        "microsoft.toolkit.highperformance.7.0.2.nupkg.sha512",
+        "microsoft.toolkit.highperformance.nuspec"
+      ]
+    },
+    "MonoGame.Framework.Content.Pipeline/3.8.5": {
+      "sha512": "/wLkSP4h+HuEM6UjX4AVHSOHj6RgLNQ3oBY6hizAmVDbTwRHCIOE8J4qvN86ECMLK0FJbzZ91Jy/auP1kcV8qw==",
+      "type": "package",
+      "path": "monogame.framework.content.pipeline/3.8.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "README.md",
+        "lib/net8.0/MonoGame.Framework.Content.Pipeline.dll",
+        "lib/net8.0/MonoGame.Framework.Content.Pipeline.xml",
+        "monogame.framework.content.pipeline.3.8.5.nupkg.sha512",
+        "monogame.framework.content.pipeline.nuspec",
+        "runtimes/linux-arm64/native/libmgpipeline.so",
+        "runtimes/linux-x64/native/libmgpipeline.so",
+        "runtimes/osx/native/libmgpipeline.dylib",
+        "runtimes/win-arm64/native/mgpipeline.dll",
+        "runtimes/win-x64/native/mgpipeline.dll"
+      ]
+    },
+    "MonoGame.Framework.Native/3.8.5": {
+      "sha512": "fobFZ8nfhCmt98HD0FNX+nP1IOoJ2N/Zk/JHY6148i4CEpIThv+OJeiR8W+zba+Xz5NkPC2pmWHRum0jN37boQ==",
+      "type": "package",
+      "path": "monogame.framework.native/3.8.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.1/MonoGame.Framework.dll",
+        "lib/netstandard2.1/MonoGame.Framework.xml",
+        "monogame.framework.native.3.8.5.nupkg.sha512",
+        "monogame.framework.native.nuspec"
+      ]
+    },
+    "MonoGame.Library.Assimp/6.0.5.1": {
+      "sha512": "QIK/ltD4ozC6rpJeC0KG2nsHwQD4dGtyC/9/sucJHU9+nSA4o4oxuPix1iNyEtL3QwCmgPBOpXMTQDPMv0Y6pQ==",
+      "type": "package",
+      "path": "monogame.library.assimp/6.0.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE",
+        "README.md",
+        "monogame.library.assimp.6.0.5.1.nupkg.sha512",
+        "monogame.library.assimp.nuspec",
+        "runtimes/linux-arm64/native/libassimp.so",
+        "runtimes/linux-x64/native/libassimp.so",
+        "runtimes/osx/native/libassimp.dylib",
+        "runtimes/win-arm64/native/assimp.dll",
+        "runtimes/win-x64/native/assimp.dll"
+      ]
+    },
+    "MonoGame.Library.FreeType/2.13.2.5": {
+      "sha512": "tBWszJGl9CfRswjig0NCxXYS5pE6VwxzbTujGwLBVuNFfWc0MeMf0GCv9Wy7RWWIHz9NDc3p2mhxGaw9r1Iv+Q==",
+      "type": "package",
+      "path": "monogame.library.freetype/2.13.2.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.txt",
+        "README.md",
+        "monogame.library.freetype.2.13.2.5.nupkg.sha512",
+        "monogame.library.freetype.nuspec",
+        "runtimes/linux-arm64/native/libfreetype.so",
+        "runtimes/linux-x64/native/libfreetype.so",
+        "runtimes/osx/native/libfreetype.dylib",
+        "runtimes/win-arm64/native/freetype.dll",
+        "runtimes/win-x64/native/freetype.dll"
+      ]
+    },
+    "MonoGame.Library.MojoShader/1.0.0.7": {
+      "sha512": "HVtIi3xs9GzNUG4Nu4h1Kwx5t1fkmT0Vzzsvx4TsjGKGViKQa/p4eTq+leaEy620o1hnVBISZSNmy6Cfyw4yBQ==",
+      "type": "package",
+      "path": "monogame.library.mojoshader/1.0.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.txt",
+        "README.md",
+        "monogame.library.mojoshader.1.0.0.7.nupkg.sha512",
+        "monogame.library.mojoshader.nuspec",
+        "runtimes/linux-arm64/native/libmojoshader.so",
+        "runtimes/linux-x64/native/libmojoshader.so",
+        "runtimes/osx/native/libmojoshader.dylib",
+        "runtimes/win-arm64/native/mojoshader.dll",
+        "runtimes/win-x64/native/mojoshader.dll"
+      ]
+    },
+    "MonoGame.Tool.Basisu/2.0.2.3": {
+      "sha512": "//JhXkYqXhHmd75SxYuih4emDEl7wN1wRO2U11uSYlD5XIr/jcYmh9BK0trnwlP1EV3XurGBrLmYfoqAUdSjmg==",
+      "type": "package",
+      "path": "monogame.tool.basisu/2.0.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE",
+        "README.md",
+        "binaries/linux-arm64/basisu",
+        "binaries/linux-x64/basisu",
+        "binaries/osx/basisu",
+        "binaries/windows-arm64/basisu.exe",
+        "binaries/windows-x64/basisu.exe",
+        "build/MonoGame.Tool.Basisu.targets",
+        "lib/net8.0/MonoGame.Tool.Basisu.dll",
+        "monogame.tool.basisu.2.0.2.3.nupkg.sha512",
+        "monogame.tool.basisu.nuspec"
+      ]
+    },
+    "MonoGame.Tool.Crunch/1.0.4.8": {
+      "sha512": "PGAr7KIywCCN5ouCpeZeX6NrAplwFYP4Rd2B5RBX5vhNJpND+NZzLOPIP1My+03VQl2o/TXG0tEvcrsOXkVqig==",
+      "type": "package",
+      "path": "monogame.tool.crunch/1.0.4.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE",
+        "README.md",
+        "binaries/linux-arm64/crunch",
+        "binaries/linux-x64/crunch",
+        "binaries/osx/crunch",
+        "binaries/windows-arm64/crunch.exe",
+        "binaries/windows-x64/crunch.exe",
+        "build/MonoGame.Tool.Crunch.targets",
+        "lib/net8.0/MonoGame.Tool.Crunch.dll",
+        "monogame.tool.crunch.1.0.4.8.nupkg.sha512",
+        "monogame.tool.crunch.nuspec"
+      ]
+    },
+    "MonoGame.Tool.Dxc/1.9.2607.1": {
+      "sha512": "s0c2q7Zj/YuuGvDHgCKIV/343j/XJfHS1Gpz6HF4izQFcj+yU30SbYpaI2nrhWOrGkXGpP69usog7QNspINEZg==",
+      "type": "package",
+      "path": "monogame.tool.dxc/1.9.2607.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.txt",
+        "README.md",
+        "binaries/linux-arm64/bin/dxc",
+        "binaries/linux-arm64/lib/libdxcompiler.so",
+        "binaries/linux-x64/bin/dxc",
+        "binaries/linux-x64/lib/libdxcompiler.so",
+        "binaries/osx/bin/dxc",
+        "binaries/osx/lib/libdxcompiler.dylib",
+        "binaries/windows-arm64/LICENSE-LLVM.txt",
+        "binaries/windows-arm64/LICENSE-MIT.txt",
+        "binaries/windows-arm64/LICENSE-MS.txt",
+        "binaries/windows-arm64/dxc.exe",
+        "binaries/windows-arm64/dxcompiler.dll",
+        "binaries/windows-x64/LICENSE-LLVM.txt",
+        "binaries/windows-x64/LICENSE-MIT.txt",
+        "binaries/windows-x64/LICENSE-MS.txt",
+        "binaries/windows-x64/dxc.exe",
+        "binaries/windows-x64/dxcompiler.dll",
+        "build/MonoGame.Tool.Dxc.targets",
+        "lib/net8.0/MonoGame.Tool.Dxc.dll",
+        "monogame.tool.dxc.1.9.2607.1.nupkg.sha512",
+        "monogame.tool.dxc.nuspec"
+      ]
+    },
+    "MonoGame.Tool.FFmpeg/7.0.0.11": {
+      "sha512": "FP5F3F3CczRBlR9fkLxOuzNGrV8/H0lHDSaxE0QidnGC4FRplPbvosO+RojpMVwUPTwIqlER1k/rqhPQ4nlvCw==",
+      "type": "package",
+      "path": "monogame.tool.ffmpeg/7.0.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE",
+        "README.md",
+        "binaries/linux-arm64/ffmpeg",
+        "binaries/linux-x64/ffmpeg",
+        "binaries/osx/ffmpeg",
+        "binaries/windows-arm64/ffmpeg.exe",
+        "binaries/windows-x64/ffmpeg.exe",
+        "build/MonoGame.Tool.FFmpeg.targets",
+        "lib/net8.0/MonoGame.Tool.FFmpeg.dll",
+        "monogame.tool.ffmpeg.7.0.0.11.nupkg.sha512",
+        "monogame.tool.ffmpeg.nuspec"
+      ]
+    },
+    "MonoGame.Tool.FFprobe/7.0.0.11": {
+      "sha512": "XbfvwMtpNr++FO8KxgXaBKKdiyTeikd5IPoNIRgv+rSHmPLxF7NGX9qEwEQbVGHcQTuXYaICdS8NetKeyi7poQ==",
+      "type": "package",
+      "path": "monogame.tool.ffprobe/7.0.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE",
+        "README.md",
+        "binaries/linux-arm64/ffprobe",
+        "binaries/linux-x64/ffprobe",
+        "binaries/osx/ffprobe",
+        "binaries/windows-arm64/ffprobe.exe",
+        "binaries/windows-x64/ffprobe.exe",
+        "build/MonoGame.Tool.FFprobe.targets",
+        "lib/net8.0/MonoGame.Tool.FFprobe.dll",
+        "monogame.tool.ffprobe.7.0.0.11.nupkg.sha512",
+        "monogame.tool.ffprobe.nuspec"
+      ]
+    },
+    "NETStandard.Library/1.6.0": {
+      "sha512": "ypsCvIdCZ4IoYASJHt6tF2fMo7N30NLgV1EbmC+snO490OMl9FvVxmumw14rhReWU3j3g7BYudG6YCrchwHJlA==",
+      "type": "package",
+      "path": "netstandard.library/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "netstandard.library.1.6.0.nupkg.sha512",
+        "netstandard.library.nuspec"
+      ]
+    },
+    "runtime.native.System.Security.Cryptography/4.0.1": {
+      "sha512": "6Z4SIheH5ziCRoMnLBE+fmcAPfyewKbteJQGTT86+dsBRSYZNuUmLS3Qg+rzo1nPdiK19VmOBne54j9kI7sI4Q==",
+      "type": "package",
+      "path": "runtime.native.system.security.cryptography/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "runtime.native.system.security.cryptography.4.0.1.nupkg.sha512",
+        "runtime.native.system.security.cryptography.nuspec"
+      ]
+    },
+    "SharpDX/4.0.1": {
+      "sha512": "8YA1VFg1/K8Emb8FEZDobojcv1BLuppVo7CRJQEgA1V748VIMPBru0i0OnsCjLSThzTn7juOvH85qjFL9Grl1w==",
+      "type": "package",
+      "path": "sharpdx/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SharpDX.dll",
+        "lib/net40/SharpDX.xml",
+        "lib/net45/SharpDX.dll",
+        "lib/net45/SharpDX.xml",
+        "lib/netcoreapp1.0/SharpDX.dll",
+        "lib/netcoreapp1.0/SharpDX.xml",
+        "lib/netstandard1.1/SharpDX.dll",
+        "lib/netstandard1.1/SharpDX.xml",
+        "lib/uap10.0/SharpDX.dll",
+        "lib/uap10.0/SharpDX.pri",
+        "lib/uap10.0/SharpDX.xml",
+        "sharpdx.4.0.1.nupkg.sha512",
+        "sharpdx.nuspec"
+      ]
+    },
+    "SharpDX.D3DCompiler/4.0.1": {
+      "sha512": "D3OzwToJ8j8dDOeJxUGUxJFwSnTQ89jJejSQkhuIsaBGh8Wd8DhQzmcsKzQaoLnzLBECS1Y37y9bGQaw3CnhxA==",
+      "type": "package",
+      "path": "sharpdx.d3dcompiler/4.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SharpDX.D3DCompiler.dll",
+        "lib/net40/SharpDX.D3DCompiler.xml",
+        "lib/net45/SharpDX.D3DCompiler.dll",
+        "lib/net45/SharpDX.D3DCompiler.xml",
+        "lib/netcoreapp1.0/SharpDX.D3DCompiler.dll",
+        "lib/netcoreapp1.0/SharpDX.D3DCompiler.xml",
+        "lib/netstandard1.1/SharpDX.D3DCompiler.dll",
+        "lib/netstandard1.1/SharpDX.D3DCompiler.xml",
+        "lib/uap10.0/SharpDX.D3DCompiler.dll",
+        "lib/uap10.0/SharpDX.D3DCompiler.pri",
+        "lib/uap10.0/SharpDX.D3DCompiler.xml",
+        "sharpdx.d3dcompiler.4.0.1.nupkg.sha512",
+        "sharpdx.d3dcompiler.nuspec"
+      ]
+    },
+    "System.CommandLine/2.0.0-beta4.22272.1": {
+      "sha512": "1uqED/q2H0kKoLJ4+hI2iPSBSEdTuhfCYADeJrAqERmiGQ2NNacYKRNEQ+gFbU4glgVyK8rxI+ZOe1onEtr/Pg==",
+      "type": "package",
+      "path": "system.commandline/2.0.0-beta4.22272.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net6.0/System.CommandLine.dll",
+        "lib/net6.0/System.CommandLine.pdb",
+        "lib/net6.0/System.CommandLine.xml",
+        "lib/net6.0/cs/System.CommandLine.resources.dll",
+        "lib/net6.0/de/System.CommandLine.resources.dll",
+        "lib/net6.0/es/System.CommandLine.resources.dll",
+        "lib/net6.0/fr/System.CommandLine.resources.dll",
+        "lib/net6.0/it/System.CommandLine.resources.dll",
+        "lib/net6.0/ja/System.CommandLine.resources.dll",
+        "lib/net6.0/ko/System.CommandLine.resources.dll",
+        "lib/net6.0/pl/System.CommandLine.resources.dll",
+        "lib/net6.0/pt-BR/System.CommandLine.resources.dll",
+        "lib/net6.0/ru/System.CommandLine.resources.dll",
+        "lib/net6.0/tr/System.CommandLine.resources.dll",
+        "lib/net6.0/zh-Hans/System.CommandLine.resources.dll",
+        "lib/net6.0/zh-Hant/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/System.CommandLine.dll",
+        "lib/netstandard2.0/System.CommandLine.pdb",
+        "lib/netstandard2.0/System.CommandLine.xml",
+        "lib/netstandard2.0/cs/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/de/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/es/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/fr/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/it/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/ja/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/ko/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/pl/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/pt-BR/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/ru/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/tr/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/zh-Hans/System.CommandLine.resources.dll",
+        "lib/netstandard2.0/zh-Hant/System.CommandLine.resources.dll",
+        "system.commandline.2.0.0-beta4.22272.1.nupkg.sha512",
+        "system.commandline.nuspec"
+      ]
+    },
+    "YamlDotNet/16.3.0": {
+      "sha512": "SgMOdxbz8X65z8hraIs6hOEdnkH6hESTAIUa7viEngHOYaH+6q5XJmwr1+yb9vJpNQ19hCQY69xbFsLtXpobQA==",
+      "type": "package",
+      "path": "yamldotnet/16.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "images/yamldotnet.png",
+        "lib/net47/YamlDotNet.dll",
+        "lib/net47/YamlDotNet.xml",
+        "lib/net6.0/YamlDotNet.dll",
+        "lib/net6.0/YamlDotNet.xml",
+        "lib/net8.0/YamlDotNet.dll",
+        "lib/net8.0/YamlDotNet.xml",
+        "lib/netstandard2.0/YamlDotNet.dll",
+        "lib/netstandard2.0/YamlDotNet.xml",
+        "lib/netstandard2.1/YamlDotNet.dll",
+        "lib/netstandard2.1/YamlDotNet.xml",
+        "yamldotnet.16.3.0.nupkg.sha512",
+        "yamldotnet.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net10.0": [
+      "AssimpNetter >= 6.0.5",
+      "MonoGame.Framework.Content.Pipeline >= 3.8.5",
+      "MonoGame.Framework.Native >= 3.8.5",
+      "MonoGame.Library.Assimp >= 6.0.5.1",
+      "MonoGame.Library.FreeType >= 2.13.2.*",
+      "MonoGame.Library.MojoShader >= 1.0.0.*",
+      "MonoGame.Tool.Basisu >= 2.0.2.*",
+      "MonoGame.Tool.Crunch >= 1.0.4.*",
+      "MonoGame.Tool.Dxc >= 1.9.2607.*",
+      "MonoGame.Tool.FFmpeg >= 7.0.0.*",
+      "MonoGame.Tool.FFprobe >= 7.0.0.*"
+    ]
+  },
+  "packageFolders": {
+    "/home/andrzei/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/run/media/andrzei/Zaraza/Repozytorium/CSharpGame/Przegladarka3D.Content/Przegladarka3D.Content.csproj",
+      "projectName": "Przegladarka3D.Content",
+      "projectPath": "/run/media/andrzei/Zaraza/Repozytorium/CSharpGame/Przegladarka3D.Content/Przegladarka3D.Content.csproj",
+      "packagesPath": "/home/andrzei/.nuget/packages/",
+      "outputPath": "/run/media/andrzei/Zaraza/Repozytorium/CSharpGame/Przegladarka3D.Content/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/andrzei/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net10.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net10.0": {
+          "targetAlias": "net10.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "10.0.100"
+    },
+    "frameworks": {
+      "net10.0": {
+        "targetAlias": "net10.0",
+        "dependencies": {
+          "AssimpNetter": {
+            "include": "Runtime, Compile, ContentFiles, Analyzers, BuildTransitive",
+            "target": "Package",
+            "version": "[6.0.5, )"
+          },
+          "MonoGame.Framework.Content.Pipeline": {
+            "target": "Package",
+            "version": "[3.8.5, )"
+          },
+          "MonoGame.Framework.Native": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[3.8.5, )"
+          },
+          "MonoGame.Library.Assimp": {
+            "target": "Package",
+            "version": "[6.0.5.1, )"
+          },
+          "MonoGame.Library.FreeType": {
+            "target": "Package",
+            "version": "[2.13.2.*, )"
+          },
+          "MonoGame.Library.MojoShader": {
+            "target": "Package",
+            "version": "[1.0.0.*, )"
+          },
+          "MonoGame.Tool.Basisu": {
+            "target": "Package",
+            "version": "[2.0.2.*, )"
+          },
+          "MonoGame.Tool.Crunch": {
+            "target": "Package",
+            "version": "[1.0.4.*, )"
+          },
+          "MonoGame.Tool.Dxc": {
+            "target": "Package",
+            "version": "[1.9.2607.*, )"
+          },
+          "MonoGame.Tool.FFmpeg": {
+            "target": "Package",
+            "version": "[7.0.0.*, )"
+          },
+          "MonoGame.Tool.FFprobe": {
+            "target": "Package",
+            "version": "[7.0.0.*, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[10.0.13, 10.0.13]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[10.0.13, 10.0.13]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.113/PortableRuntimeIdentifierGraph.json",
+        "packagesToPrune": {
+          "Microsoft.CSharp": "(,4.7.32767]",
+          "Microsoft.VisualBasic": "(,10.4.32767]",
+          "Microsoft.Win32.Primitives": "(,4.3.32767]",
+          "Microsoft.Win32.Registry": "(,5.0.32767]",
+          "runtime.any.System.Collections": "(,4.3.32767]",
+          "runtime.any.System.Diagnostics.Tools": "(,4.3.32767]",
+          "runtime.any.System.Diagnostics.Tracing": "(,4.3.32767]",
+          "runtime.any.System.Globalization": "(,4.3.32767]",
+          "runtime.any.System.Globalization.Calendars": "(,4.3.32767]",
+          "runtime.any.System.IO": "(,4.3.32767]",
+          "runtime.any.System.Reflection": "(,4.3.32767]",
+          "runtime.any.System.Reflection.Extensions": "(,4.3.32767]",
+          "runtime.any.System.Reflection.Primitives": "(,4.3.32767]",
+          "runtime.any.System.Resources.ResourceManager": "(,4.3.32767]",
+          "runtime.any.System.Runtime": "(,4.3.32767]",
+          "runtime.any.System.Runtime.Handles": "(,4.3.32767]",
+          "runtime.any.System.Runtime.InteropServices": "(,4.3.32767]",
+          "runtime.any.System.Text.Encoding": "(,4.3.32767]",
+          "runtime.any.System.Text.Encoding.Extensions": "(,4.3.32767]",
+          "runtime.any.System.Threading.Tasks": "(,4.3.32767]",
+          "runtime.any.System.Threading.Timer": "(,4.3.32767]",
+          "runtime.aot.System.Collections": "(,4.3.32767]",
+          "runtime.aot.System.Diagnostics.Tools": "(,4.3.32767]",
+          "runtime.aot.System.Diagnostics.Tracing": "(,4.3.32767]",
+          "runtime.aot.System.Globalization": "(,4.3.32767]",
+          "runtime.aot.System.Globalization.Calendars": "(,4.3.32767]",
+          "runtime.aot.System.IO": "(,4.3.32767]",
+          "runtime.aot.System.Reflection": "(,4.3.32767]",
+          "runtime.aot.System.Reflection.Extensions": "(,4.3.32767]",
+          "runtime.aot.System.Reflection.Primitives": "(,4.3.32767]",
+          "runtime.aot.System.Resources.ResourceManager": "(,4.3.32767]",
+          "runtime.aot.System.Runtime": "(,4.3.32767]",
+          "runtime.aot.System.Runtime.Handles": "(,4.3.32767]",
+          "runtime.aot.System.Runtime.InteropServices": "(,4.3.32767]",
+          "runtime.aot.System.Text.Encoding": "(,4.3.32767]",
+          "runtime.aot.System.Text.Encoding.Extensions": "(,4.3.32767]",
+          "runtime.aot.System.Threading.Tasks": "(,4.3.32767]",
+          "runtime.aot.System.Threading.Timer": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.debian.9-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.debian.9-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.debian.9-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.debian.9-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.fedora.27-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.fedora.27-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.fedora.27-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.fedora.27-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.fedora.28-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.fedora.28-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.fedora.28-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.fedora.28-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.opensuse.42.3-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.opensuse.42.3-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.opensuse.42.3-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.opensuse.42.3-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple": "(,4.3.32767]",
+          "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography": "(,4.3.32767]",
+          "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl": "(,4.3.32767]",
+          "runtime.ubuntu.18.04-x64.runtime.native.System": "(,4.3.32767]",
+          "runtime.ubuntu.18.04-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.ubuntu.18.04-x64.runtime.native.System.Net.Http": "(,4.3.32767]",
+          "runtime.ubuntu.18.04-x64.runtime.native.System.Net.Security": "(,4.3.32767]",
+          "runtime.unix.Microsoft.Win32.Primitives": "(,4.3.32767]",
+          "runtime.unix.System.Console": "(,4.3.32767]",
+          "runtime.unix.System.Diagnostics.Debug": "(,4.3.32767]",
+          "runtime.unix.System.IO.FileSystem": "(,4.3.32767]",
+          "runtime.unix.System.Net.Primitives": "(,4.3.32767]",
+          "runtime.unix.System.Net.Sockets": "(,4.3.32767]",
+          "runtime.unix.System.Private.Uri": "(,4.3.32767]",
+          "runtime.unix.System.Runtime.Extensions": "(,4.3.32767]",
+          "runtime.win.Microsoft.Win32.Primitives": "(,4.3.32767]",
+          "runtime.win.System.Console": "(,4.3.32767]",
+          "runtime.win.System.Diagnostics.Debug": "(,4.3.32767]",
+          "runtime.win.System.IO.FileSystem": "(,4.3.32767]",
+          "runtime.win.System.Net.Primitives": "(,4.3.32767]",
+          "runtime.win.System.Net.Sockets": "(,4.3.32767]",
+          "runtime.win.System.Runtime.Extensions": "(,4.3.32767]",
+          "runtime.win10-arm-aot.runtime.native.System.IO.Compression": "(,4.0.32767]",
+          "runtime.win10-arm64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.win10-x64-aot.runtime.native.System.IO.Compression": "(,4.0.32767]",
+          "runtime.win10-x86-aot.runtime.native.System.IO.Compression": "(,4.0.32767]",
+          "runtime.win7-x64.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.win7-x86.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "runtime.win7.System.Private.Uri": "(,4.3.32767]",
+          "runtime.win8-arm.runtime.native.System.IO.Compression": "(,4.3.32767]",
+          "System.AppContext": "(,4.3.32767]",
+          "System.Buffers": "(,5.0.32767]",
+          "System.Collections": "(,4.3.32767]",
+          "System.Collections.Concurrent": "(,4.3.32767]",
+          "System.Collections.Immutable": "(,10.0.32767]",
+          "System.Collections.NonGeneric": "(,4.3.32767]",
+          "System.Collections.Specialized": "(,4.3.32767]",
+          "System.ComponentModel": "(,4.3.32767]",
+          "System.ComponentModel.Annotations": "(,4.3.32767]",
+          "System.ComponentModel.EventBasedAsync": "(,4.3.32767]",
+          "System.ComponentModel.Primitives": "(,4.3.32767]",
+          "System.ComponentModel.TypeConverter": "(,4.3.32767]",
+          "System.Console": "(,4.3.32767]",
+          "System.Data.Common": "(,4.3.32767]",
+          "System.Data.DataSetExtensions": "(,4.4.32767]",
+          "System.Diagnostics.Contracts": "(,4.3.32767]",
+          "System.Diagnostics.Debug": "(,4.3.32767]",
+          "System.Diagnostics.DiagnosticSource": "(,10.0.32767]",
+          "System.Diagnostics.FileVersionInfo": "(,4.3.32767]",
+          "System.Diagnostics.Process": "(,4.3.32767]",
+          "System.Diagnostics.StackTrace": "(,4.3.32767]",
+          "System.Diagnostics.TextWriterTraceListener": "(,4.3.32767]",
+          "System.Diagnostics.Tools": "(,4.3.32767]",
+          "System.Diagnostics.TraceSource": "(,4.3.32767]",
+          "System.Diagnostics.Tracing": "(,4.3.32767]",
+          "System.Drawing.Primitives": "(,4.3.32767]",
+          "System.Dynamic.Runtime": "(,4.3.32767]",
+          "System.Formats.Asn1": "(,10.0.32767]",
+          "System.Formats.Tar": "(,10.0.32767]",
+          "System.Globalization": "(,4.3.32767]",
+          "System.Globalization.Calendars": "(,4.3.32767]",
+          "System.Globalization.Extensions": "(,4.3.32767]",
+          "System.IO": "(,4.3.32767]",
+          "System.IO.Compression": "(,4.3.32767]",
+          "System.IO.Compression.ZipFile": "(,4.3.32767]",
+          "System.IO.FileSystem": "(,4.3.32767]",
+          "System.IO.FileSystem.AccessControl": "(,4.4.32767]",
+          "System.IO.FileSystem.DriveInfo": "(,4.3.32767]",
+          "System.IO.FileSystem.Primitives": "(,4.3.32767]",
+          "System.IO.FileSystem.Watcher": "(,4.3.32767]",
+          "System.IO.IsolatedStorage": "(,4.3.32767]",
+          "System.IO.MemoryMappedFiles": "(,4.3.32767]",
+          "System.IO.Pipelines": "(,10.0.32767]",
+          "System.IO.Pipes": "(,4.3.32767]",
+          "System.IO.Pipes.AccessControl": "(,5.0.32767]",
+          "System.IO.UnmanagedMemoryStream": "(,4.3.32767]",
+          "System.Linq": "(,4.3.32767]",
+          "System.Linq.AsyncEnumerable": "(,10.0.32767]",
+          "System.Linq.Expressions": "(,4.3.32767]",
+          "System.Linq.Parallel": "(,4.3.32767]",
+          "System.Linq.Queryable": "(,4.3.32767]",
+          "System.Memory": "(,5.0.32767]",
+          "System.Net.Http": "(,4.3.32767]",
+          "System.Net.Http.Json": "(,10.0.32767]",
+          "System.Net.NameResolution": "(,4.3.32767]",
+          "System.Net.NetworkInformation": "(,4.3.32767]",
+          "System.Net.Ping": "(,4.3.32767]",
+          "System.Net.Primitives": "(,4.3.32767]",
+          "System.Net.Requests": "(,4.3.32767]",
+          "System.Net.Security": "(,4.3.32767]",
+          "System.Net.ServerSentEvents": "(,10.0.32767]",
+          "System.Net.Sockets": "(,4.3.32767]",
+          "System.Net.WebHeaderCollection": "(,4.3.32767]",
+          "System.Net.WebSockets": "(,4.3.32767]",
+          "System.Net.WebSockets.Client": "(,4.3.32767]",
+          "System.Numerics.Vectors": "(,5.0.32767]",
+          "System.ObjectModel": "(,4.3.32767]",
+          "System.Private.DataContractSerialization": "(,4.3.32767]",
+          "System.Private.Uri": "(,4.3.32767]",
+          "System.Reflection": "(,4.3.32767]",
+          "System.Reflection.DispatchProxy": "(,6.0.32767]",
+          "System.Reflection.Emit": "(,4.7.32767]",
+          "System.Reflection.Emit.ILGeneration": "(,4.7.32767]",
+          "System.Reflection.Emit.Lightweight": "(,4.7.32767]",
+          "System.Reflection.Extensions": "(,4.3.32767]",
+          "System.Reflection.Metadata": "(,10.0.32767]",
+          "System.Reflection.Primitives": "(,4.3.32767]",
+          "System.Reflection.TypeExtensions": "(,4.3.32767]",
+          "System.Resources.Reader": "(,4.3.32767]",
+          "System.Resources.ResourceManager": "(,4.3.32767]",
+          "System.Resources.Writer": "(,4.3.32767]",
+          "System.Runtime": "(,4.3.32767]",
+          "System.Runtime.CompilerServices.Unsafe": "(,7.0.32767]",
+          "System.Runtime.CompilerServices.VisualC": "(,4.3.32767]",
+          "System.Runtime.Extensions": "(,4.3.32767]",
+          "System.Runtime.Handles": "(,4.3.32767]",
+          "System.Runtime.InteropServices": "(,4.3.32767]",
+          "System.Runtime.InteropServices.RuntimeInformation": "(,4.3.32767]",
+          "System.Runtime.Loader": "(,4.3.32767]",
+          "System.Runtime.Numerics": "(,4.3.32767]",
+          "System.Runtime.Serialization.Formatters": "(,4.3.32767]",
+          "System.Runtime.Serialization.Json": "(,4.3.32767]",
+          "System.Runtime.Serialization.Primitives": "(,4.3.32767]",
+          "System.Runtime.Serialization.Xml": "(,4.3.32767]",
+          "System.Security.AccessControl": "(,6.0.32767]",
+          "System.Security.Claims": "(,4.3.32767]",
+          "System.Security.Cryptography.Algorithms": "(,4.3.32767]",
+          "System.Security.Cryptography.Cng": "(,5.0.32767]",
+          "System.Security.Cryptography.Csp": "(,4.3.32767]",
+          "System.Security.Cryptography.Encoding": "(,4.3.32767]",
+          "System.Security.Cryptography.OpenSsl": "(,5.0.32767]",
+          "System.Security.Cryptography.Primitives": "(,4.3.32767]",
+          "System.Security.Cryptography.X509Certificates": "(,4.3.32767]",
+          "System.Security.Principal": "(,4.3.32767]",
+          "System.Security.Principal.Windows": "(,5.0.32767]",
+          "System.Security.SecureString": "(,4.3.32767]",
+          "System.Text.Encoding": "(,4.3.32767]",
+          "System.Text.Encoding.CodePages": "(,10.0.32767]",
+          "System.Text.Encoding.Extensions": "(,4.3.32767]",
+          "System.Text.Encodings.Web": "(,10.0.32767]",
+          "System.Text.Json": "(,10.0.32767]",
+          "System.Text.RegularExpressions": "(,4.3.32767]",
+          "System.Threading": "(,4.3.32767]",
+          "System.Threading.AccessControl": "(,10.0.32767]",
+          "System.Threading.Channels": "(,10.0.32767]",
+          "System.Threading.Overlapped": "(,4.3.32767]",
+          "System.Threading.Tasks": "(,4.3.32767]",
+          "System.Threading.Tasks.Dataflow": "(,10.0.32767]",
+          "System.Threading.Tasks.Extensions": "(,5.0.32767]",
+          "System.Threading.Tasks.Parallel": "(,4.3.32767]",
+          "System.Threading.Thread": "(,4.3.32767]",
+          "System.Threading.ThreadPool": "(,4.3.32767]",
+          "System.Threading.Timer": "(,4.3.32767]",
+          "System.ValueTuple": "(,4.5.32767]",
+          "System.Xml.ReaderWriter": "(,4.3.32767]",
+          "System.Xml.XDocument": "(,4.3.32767]",
+          "System.Xml.XmlDocument": "(,4.3.32767]",
+          "System.Xml.XmlSerializer": "(,4.3.32767]",
+          "System.Xml.XPath": "(,4.3.32767]",
+          "System.Xml.XPath.XDocument": "(,5.0.32767]"
+        }
+      }
+    },
+    "runtimes": {
+      "linux-x64": {
+        "#import": []
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „Microsoft.NETCore.App” 1.0.5 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-7mfr-774f-w5r9",
+      "libraryId": "Microsoft.NETCore.App",
+      "targetGraphs": [
+        "net10.0",
+        "net10.0/linux-x64"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „Microsoft.NETCore.App” 1.0.5 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-8884-xcr4-r68p",
+      "libraryId": "Microsoft.NETCore.App",
+      "targetGraphs": [
+        "net10.0",
+        "net10.0/linux-x64"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „Microsoft.NETCore.Jit” 1.0.7 ma znane wysoka luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-xcvr-qv8h-m7xw",
+      "libraryId": "Microsoft.NETCore.Jit",
+      "targetGraphs": [
+        "net10.0",
+        "net10.0/linux-x64"
+      ]
+    }
+  ]
+}
