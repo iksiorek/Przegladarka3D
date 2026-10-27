@@ -1,1 +1,0 @@
-/run/media/andrzei/Zaraza/Repozytorium/CSharpGame/Przegladarka3D/Przegladarka3D.DesktopVK/obj/Debug/net9.0/Przegladarka3D.DesktopVK.csproj.AssemblyReference.cache

@@ -1,31 +1,65 @@
-System files
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
 
-.DS_Store Thumbs.db Desktop.ini
-
-.NET build output
-
-[Bb]in/ [Oo]bj/ artifacts/ *.pdb *.cachefile
-
-IDEs and editors
-
-.vs/ .vscode/ .idea/ _ReSharper*/ *.suo *.user *.userosscache *.sln.docstates *.swp *.swo *~
-
-Logs
-
+#Visual Studio files
+*.pidb
+*.userprefs
+*.[Oo]bj
+*.exe
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
 *.log
+*.lib
+*.sbr
+*.sdf
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
+ipch/
+obj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/
+Ankh.NoLoad
 
-Temporary and backup files
+#Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
 
-*.bak *.tmp
+#Project files
+[Bb]uild/
 
-MonoGame generated content
+#Subversion files
+.svn
 
-**/CompiledContent/
+# Office Temp Files
+~$*
 
-NuGet packages (if stored locally)
+#monodroid private beta
+monodroid*.msi
+/CompiledContent/Android/IgnoreMe.dll
+/CompiledContent/OSX/IgnoreMe.dll
+/CompiledContent/Windows8/IgnoreMe.dll
+/CompiledContent/Windows/IgnoreMe.dll
+*.cachefile
+*.dll
+*.VC.db
+*.VC.opendb
 
-packages/
-
-OS-specific files
-
-.Trash-*
+artifacts/
