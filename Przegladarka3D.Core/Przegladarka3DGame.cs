@@ -16,7 +16,18 @@ namespace Przegladarka3D.Core
     public class Przegladarka3DGame : Game
     {
         // Resources for drawing.
-        private GraphicsDeviceManager graphicsDeviceManager;
+        // globalnie do testu jak to dziala
+        public GraphicsDeviceManager graphicsDeviceManager;
+        Vector3 camTarget;
+        Vector3 camPosition;
+        Matrix projectionMatrix; //Focal Plane tzw
+        Matrix viewMatrix; // faktyczna "pozycja" kamery
+        Matrix worldMatrix;
+        BasicEffect basicEffect; //chuj wie do czego ustawiasz alhha i wlasciwosici renderowania ale po co ? Basic effect = upo shader
+        VertexPositionColor[] trojkatBermudzki;
+        VertexBuffer vertexBuffer;
+        
+
 
         /// <summary>
         /// Indicates if the game is running on a mobile platform.
@@ -66,6 +77,28 @@ namespace Przegladarka3D.Core
             // based on what the user or operating system selected.
             var selectedLanguage = LocalizationManager.DEFAULT_CULTURE_CODE;
             LocalizationManager.SetCulture(selectedLanguage);
+            
+            camTarget = new Vector3(0f,0f,0f);
+            camPosition = new Vector3(0f,0f,0f);
+
+            projectionMatrix = Matrix.CreateOrthographic(MathHelper.ToRadians(45f),GraphicsDevice.DisplayMode.AspectRatio,1f,1000f);
+
+            viewMatrix = Matrix.CreateLookAt(camPosition,camTarget,Vector3.Up);
+            worldMatrix = Matrix.CreateWorld(camTarget, Vector3.Forward, Vector3.Up);
+
+            basicEffect = new BasicEffect(GraphicsDevice);
+            basicEffect.Alpha = 1.0f;
+            basicEffect.VertexColorEnabled = true;
+            basicEffect.LightingEnabled = false;
+
+            trojkatBermudzki = new VertexPositionColor[3];            
+            trojkatBermudzki[0] = new VertexPositionColor(new Vector3(0,20,0), Color.Red);
+            trojkatBermudzki[1] = new VertexPositionColor(new Vector3(-20,-20,0), Color.Green);
+            trojkatBermudzki[2] = new VertexPositionColor(new Vector3(20,20,0), Color.Blue);
+
+            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor),3, BufferUsage.WriteOnly);
+            vertexBuffer.SetData<VertexPositionColor>(trojkatBermudzki);
+
         }
 
         /// <summary>
@@ -102,6 +135,7 @@ namespace Przegladarka3D.Core
         /// </param>
         protected override void Draw(GameTime gameTime)
         {
+
             // Clears the screen with the MonoGame orange color before drawing.
             GraphicsDevice.Clear(Color.GreenYellow);
 
