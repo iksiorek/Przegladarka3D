@@ -23,7 +23,7 @@ namespace Przegladarka3D.Core
         Matrix projectionMatrix; //Focal Plane tzw
         Matrix viewMatrix; // faktyczna "pozycja" kamery
         Matrix worldMatrix;
-        BasicEffect basicEffect; //chuj wie do czego ustawiasz alhha i wlasciwosici renderowania ale po co ? Basic effect = upo shader
+        BasicEffect basicEffect; //chuj wie do czego ustawiasz alpha i wlasciwosici renderowania ale po co ? Basic effect = upo shader
         VertexPositionColor[] trojkatBermudzki;
         VertexBuffer vertexBuffer;
         
@@ -63,8 +63,7 @@ namespace Przegladarka3D.Core
         /// </summary>
         protected override void Initialize()
         {
-            base.Initialize();
-
+            
             // Load supported languages and set the default language.
             List<CultureInfo> cultures = LocalizationManager.GetSupportedCultures();
             var languages = new List<CultureInfo>();
@@ -78,27 +77,29 @@ namespace Przegladarka3D.Core
             var selectedLanguage = LocalizationManager.DEFAULT_CULTURE_CODE;
             LocalizationManager.SetCulture(selectedLanguage);
             
-            camTarget = new Vector3(0f,0f,0f);
-            camPosition = new Vector3(0f,0f,0f);
 
-            projectionMatrix = Matrix.CreateOrthographic(MathHelper.ToRadians(45f),GraphicsDevice.DisplayMode.AspectRatio,1f,1000f);
+            camTarget = new Vector3(0f,0f,0f);
+            camPosition = new Vector3(0f,0f,100f);
+
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f),GraphicsDevice.DisplayMode.AspectRatio,1f,1000f);
 
             viewMatrix = Matrix.CreateLookAt(camPosition,camTarget,Vector3.Up);
             worldMatrix = Matrix.CreateWorld(camTarget, Vector3.Forward, Vector3.Up);
 
+            // shader monogame ? albo cos podobnego
             basicEffect = new BasicEffect(GraphicsDevice);
             basicEffect.Alpha = 1.0f;
             basicEffect.VertexColorEnabled = true;
             basicEffect.LightingEnabled = false;
 
             trojkatBermudzki = new VertexPositionColor[3];            
-            trojkatBermudzki[0] = new VertexPositionColor(new Vector3(0,20,0), Color.Red);
-            trojkatBermudzki[1] = new VertexPositionColor(new Vector3(-20,-20,0), Color.Green);
-            trojkatBermudzki[2] = new VertexPositionColor(new Vector3(20,20,0), Color.Blue);
+            trojkatBermudzki[0] = new VertexPositionColor(new Vector3(0,10,0), Color.Red);
+            trojkatBermudzki[1] = new VertexPositionColor(new Vector3(20,-10,0), Color.Green);
+            trojkatBermudzki[2] = new VertexPositionColor(new Vector3(-20,-10,0), Color.Blue);
 
             vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor),3, BufferUsage.WriteOnly);
             vertexBuffer.SetData<VertexPositionColor>(trojkatBermudzki);
-
+            base.Initialize();
         }
 
         /// <summary>
@@ -106,6 +107,7 @@ namespace Przegladarka3D.Core
         /// </summary>
         protected override void LoadContent()
         {
+            
             base.LoadContent();
         }
 
@@ -121,9 +123,11 @@ namespace Przegladarka3D.Core
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed
                 || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+             // TODO: Add your update logic here
+            Matrix obrot = Matrix.CreateRotationY(MathHelper.ToRadians(0.5f));
+            camPosition = Vector3.Transform(camPosition, obrot);
 
-            // TODO: Add your update logic here
-
+            viewMatrix = Matrix.CreateLookAt(camPosition,camTarget, Vector3.Up);
             base.Update(gameTime);
         }
 
@@ -137,11 +141,23 @@ namespace Przegladarka3D.Core
         {
 
             // Clears the screen with the MonoGame orange color before drawing.
-            GraphicsDevice.Clear(Color.GreenYellow);
+            basicEffect.Projection = projectionMatrix;
+            basicEffect.View = viewMatrix;
+            basicEffect.World = worldMatrix;
+            
+            GraphicsDevice.Clear(Color.White);
+            
+            RasterizerState rasterizerState1 = new RasterizerState();
+            rasterizerState1.CullMode = CullMode.None;
+            GraphicsDevice.RasterizerState = rasterizerState1;
+            GraphicsDevice.SetVertexBuffer(vertexBuffer);
 
-            // TODO: Add your drawing code here
-
-            base.Draw(gameTime);
+            foreach (EffectPass pass in basicEffect.CurrentTechnique.Passes)
+            {
+            pass.Apply();
+            GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleList,0,3);
+            }
+         base.Draw(gameTime);
         }
     }
 }
