@@ -24,10 +24,10 @@ namespace Przegladarka3D.Core
         Matrix viewMatrix; // faktyczna "pozycja" kamery
         Matrix worldMatrix;
         BasicEffect basicEffect; //chuj wie do czego ustawiasz alpha i wlasciwosici renderowania ale po co ? Basic effect = upo shader
-        VertexPositionColor[] trojkatBermudzki;
+        VertexPositionColor[] szescianBermudzki;
         VertexBuffer vertexBuffer;
-        
-
+        short[] indeksyBermudzkie;        
+        IndexBuffer indexbuffer;
 
         /// <summary>
         /// Indicates if the game is running on a mobile platform.
@@ -92,13 +92,41 @@ namespace Przegladarka3D.Core
             basicEffect.VertexColorEnabled = true;
             basicEffect.LightingEnabled = false;
 
-            trojkatBermudzki = new VertexPositionColor[3];            
-            trojkatBermudzki[0] = new VertexPositionColor(new Vector3(0,10,0), Color.Red);
-            trojkatBermudzki[1] = new VertexPositionColor(new Vector3(20,-10,0), Color.Green);
-            trojkatBermudzki[2] = new VertexPositionColor(new Vector3(-20,-10,0), Color.Blue);
+            szescianBermudzki= new VertexPositionColor[9];            
+            szescianBermudzki[0] = new VertexPositionColor(new Vector3(-10,10,10), Color.Red);
+            szescianBermudzki[1] = new VertexPositionColor(new Vector3(10,10,10), Color.Green);
+            szescianBermudzki[2] = new VertexPositionColor(new Vector3(10,-10,10), Color.Blue);
+            szescianBermudzki[3] = new VertexPositionColor(new Vector3(-10,-10,10), Color.Black);
+            szescianBermudzki[4] = new VertexPositionColor(new Vector3(-10,10,-10), Color.Black);
+            szescianBermudzki[5] = new VertexPositionColor(new Vector3(10,10,-10), Color.Black);
+            szescianBermudzki[6] = new VertexPositionColor(new Vector3(10,-10,-10), Color.Black);
+            szescianBermudzki[7] = new VertexPositionColor(new Vector3(-10,-10,-10), Color.Black);
 
-            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor),3, BufferUsage.WriteOnly);
-            vertexBuffer.SetData<VertexPositionColor>(trojkatBermudzki);
+            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor),szescianBermudzki.Length, BufferUsage.WriteOnly);
+            vertexBuffer.SetData<VertexPositionColor>(szescianBermudzki);
+            
+            indeksyBermudzkie = new short[]{
+                0,1,2, //front
+                0,3,2,
+
+                4,5,6, // back
+                4,7,6,
+                
+                0,1,5, // top
+                0,4,5,
+
+                2,1,5, // right
+                2,6,5,
+
+                2,6,7, // haha 67
+                2,3,7, // bottom       
+
+                3,7,4, // left
+                3,0,4,
+            };
+
+            indexbuffer = new IndexBuffer(GraphicsDevice,IndexElementSize.SixteenBits,indeksyBermudzkie.Length, BufferUsage.WriteOnly);
+            indexbuffer.SetData<short>(indeksyBermudzkie,0,indeksyBermudzkie.Length);            
             base.Initialize();
         }
 
@@ -125,7 +153,9 @@ namespace Przegladarka3D.Core
                 Exit();
              // TODO: Add your update logic here
             Matrix obrot = Matrix.CreateRotationY(MathHelper.ToRadians(0.5f));
+            Matrix obrot1 = Matrix.CreateRotationX(MathHelper.ToRadians(0.6f));
             camPosition = Vector3.Transform(camPosition, obrot);
+            camPosition = Vector3.Transform(camPosition, obrot1);
 
             viewMatrix = Matrix.CreateLookAt(camPosition,camTarget, Vector3.Up);
             base.Update(gameTime);
@@ -151,11 +181,12 @@ namespace Przegladarka3D.Core
             rasterizerState1.CullMode = CullMode.None;
             GraphicsDevice.RasterizerState = rasterizerState1;
             GraphicsDevice.SetVertexBuffer(vertexBuffer);
+            GraphicsDevice.Indices = indexbuffer;
 
             foreach (EffectPass pass in basicEffect.CurrentTechnique.Passes)
             {
             pass.Apply();
-            GraphicsDevice.DrawPrimitives(PrimitiveType.TriangleList,0,3);
+            GraphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleStrip,0,0,12);
             }
          base.Draw(gameTime);
         }
