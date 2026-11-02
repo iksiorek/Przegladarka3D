@@ -94,13 +94,13 @@ namespace Przegladarka3D.Core
 
             szescianBermudzki= new VertexPositionColor[9];            
             szescianBermudzki[0] = new VertexPositionColor(new Vector3(-10,10,10), Color.Red);
-            szescianBermudzki[1] = new VertexPositionColor(new Vector3(10,10,10), Color.Green);
+            szescianBermudzki[1] = new VertexPositionColor(new Vector3(10,10,10), Color.Red);
             szescianBermudzki[2] = new VertexPositionColor(new Vector3(10,-10,10), Color.Blue);
-            szescianBermudzki[3] = new VertexPositionColor(new Vector3(-10,-10,10), Color.Black);
-            szescianBermudzki[4] = new VertexPositionColor(new Vector3(-10,10,-10), Color.Black);
-            szescianBermudzki[5] = new VertexPositionColor(new Vector3(10,10,-10), Color.Black);
-            szescianBermudzki[6] = new VertexPositionColor(new Vector3(10,-10,-10), Color.Black);
-            szescianBermudzki[7] = new VertexPositionColor(new Vector3(-10,-10,-10), Color.Black);
+            szescianBermudzki[3] = new VertexPositionColor(new Vector3(-10,-10,10), Color.Blue);
+            szescianBermudzki[4] = new VertexPositionColor(new Vector3(-10,10,-10), Color.Green);
+            szescianBermudzki[5] = new VertexPositionColor(new Vector3(10,10,-10), Color.Green);
+            szescianBermudzki[6] = new VertexPositionColor(new Vector3(10,-10,-10), Color.Green);
+            szescianBermudzki[7] = new VertexPositionColor(new Vector3(-10,-10,-10), Color.Green);
 
             vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor),szescianBermudzki.Length, BufferUsage.WriteOnly);
             vertexBuffer.SetData<VertexPositionColor>(szescianBermudzki);
@@ -112,17 +112,17 @@ namespace Przegladarka3D.Core
                 4,5,6, // back
                 4,7,6,
                 
-                0,1,5, // top
-                0,4,5,
+                0,1,4, // top
+                1,4,5,
 
-                2,1,5, // right
-                2,6,5,
+                1,5,6, // right
+                1,2,6,
 
-                2,6,7, // haha 67
-                2,3,7, // bottom       
+                3,2,6, 
+                3,7,6, // bottom       
 
-                3,7,4, // left
-                3,0,4,
+                0,4,7, // left
+                0,3,7,
             };
 
             indexbuffer = new IndexBuffer(GraphicsDevice,IndexElementSize.SixteenBits,indeksyBermudzkie.Length, BufferUsage.WriteOnly);
@@ -179,6 +179,7 @@ namespace Przegladarka3D.Core
             
             RasterizerState rasterizerState1 = new RasterizerState();
             rasterizerState1.CullMode = CullMode.None;
+            rasterizerState1.FillMode = FillMode.WireFrame;
             GraphicsDevice.RasterizerState = rasterizerState1;
             GraphicsDevice.SetVertexBuffer(vertexBuffer);
             GraphicsDevice.Indices = indexbuffer;
@@ -186,7 +187,7 @@ namespace Przegladarka3D.Core
             foreach (EffectPass pass in basicEffect.CurrentTechnique.Passes)
             {
             pass.Apply();
-            GraphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleStrip,0,0,12);
+            GraphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList,0,0,12);
             }
          base.Draw(gameTime);
         }
