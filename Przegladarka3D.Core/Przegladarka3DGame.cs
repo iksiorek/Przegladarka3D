@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using static System.Net.Mime.MediaTypeNames;
+using System.IO;
+using System.Text;
 
 namespace Przegladarka3D.Core
 {
@@ -44,6 +46,44 @@ namespace Przegladarka3D.Core
         /// initializes services like settings and leaderboard managers, and sets up the 
         /// screen manager for screen transitions.
         /// </summary>
+        public void STLReader(){
+            string file = "";
+            
+            if (File.Exists(file))
+            {
+                using (BinaryReader br = new BinaryReader(File.Open(file,FileMode.Open), Encoding.ASCII))
+                {
+                    br.ReadBytes(80);                    // Naglowek(syf)
+                    UInt32 ntriangle = br.ReadUInt32();
+                    Console.WriteLine("Liczba trojkatow:"+ ntriangle);
+                    for(int i = 0; i < ntriangle; i++){
+                        br.ReadBytes(12);
+                        byte[] xraw = br.ReadBytes(12);
+                        float[] xpos = {BitConverter.ToSingle(xraw,0),
+                                        BitConverter.ToSingle(xraw,4),
+                                        BitConverter.ToSingle(xraw,8)
+                                       };                        
+                        byte[] yraw = br.ReadBytes(12);
+                        float[] ypos = {BitConverter.ToSingle(yraw,0),
+                                        BitConverter.ToSingle(yraw,4),
+                                        BitConverter.ToSingle(yraw,8)
+                                       };
+                        byte[] zraw = br.ReadBytes(12);
+                        float[] zpos = {BitConverter.ToSingle(zraw,0),
+                                        BitConverter.ToSingle(zraw,4),
+                                        BitConverter.ToSingle(zraw,8)
+                                       };
+                    br.ReadBytes(2); // Atrybuty ?
+                    Console.WriteLine("xpos:"+xpos[0]+" "+xpos[1]+" "+xpos[2]);
+                    Console.WriteLine("ypos:"+ypos[0]+" "+ypos[1]+" "+ypos[2]);
+                    Console.WriteLine("zpos:"+zpos[0]+" "+zpos[1]+" "+zpos[2]);
+                    } 
+                }
+
+            }
+        }
+
+
         public Przegladarka3DGame()
         {
             graphicsDeviceManager = new GraphicsDeviceManager(this);
@@ -127,6 +167,7 @@ namespace Przegladarka3D.Core
 
             indexbuffer = new IndexBuffer(GraphicsDevice,IndexElementSize.SixteenBits,indeksyBermudzkie.Length, BufferUsage.WriteOnly);
             indexbuffer.SetData<short>(indeksyBermudzkie,0,indeksyBermudzkie.Length);            
+            STLReader();
             base.Initialize();
         }
 
