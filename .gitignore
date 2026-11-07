@@ -36,7 +36,6 @@ obj/
 [Dd]ebug*/
 [Rr]elease*/
 Ankh.NoLoad
-
 #Tooling
 _ReSharper*/
 *.resharper
@@ -63,3 +62,6 @@ monodroid*.msi
 *.VC.opendb
 
 artifacts/
+
+docs/
+docs
