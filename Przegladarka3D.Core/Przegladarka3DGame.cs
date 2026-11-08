@@ -5,7 +5,6 @@ using System.Globalization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using static System.Net.Mime.MediaTypeNames;
 using System.IO;
 using System.Text;
 
@@ -26,10 +25,24 @@ namespace Przegladarka3D.Core
         Matrix viewMatrix; // faktyczna "pozycja" kamery
         Matrix worldMatrix;
         BasicEffect basicEffect; //chuj wie do czego ustawiasz alpha i wlasciwosici renderowania ale po co ? Basic effect = upo shader
-        VertexPositionColor[] szescianBermudzki;
         VertexBuffer vertexBuffer;
         int[] indeksyBermudzkie;        
         IndexBuffer indexbuffer;
+
+        public struct VertexPositionColorNormal
+        {
+            public Vector3 Position;
+            public Color Color;
+            public Vector3 Normal;
+            // specjalna klasa do definicji ulozenia w pamieci VRAM GPU 
+            public readonly static VertexDeclaration VertexDeclaration = new VertexDeclaration
+            (
+                new VertexElement(0, VertexElementFormat.Vector3, VertexElementUsage.Position, 0),
+                new VertexElement(sizeof(float) * 3, VertexElementFormat.Color, VertexElementUsage.Color, 0),
+                new VertexElement(sizeof(float) * 3 + 4, VertexElementFormat.Vector3, VertexElementUsage.Normal, 0)
+            );
+        }
+        VertexPositionColorNormal[] brylka;
 
         /// <summary>
         /// Indicates if the game is running on a mobile platform.
@@ -47,7 +60,7 @@ namespace Przegladarka3D.Core
         /// screen manager for screen transitions.
         /// </summary>
         // TO DO: zoptymalizowac ilosc wierzcholkow
-        public (Vector3[],int[]) STLReader(){
+        public (Vector3[],int[],Vector3[]) STLReader(){
             string file = "";
             Vector3[] pos;
             UInt32 ntriangle;
@@ -60,41 +73,48 @@ namespace Przegladarka3D.Core
                     ntriangle = br.ReadUInt32();
                     pos = new Vector3[ntriangle*3];
                     indicies = new int[ntriangle*3];
+                    Vector3[] normals = new Vector3[ntriangle*3];
                     //Console.WriteLine("Liczba trojkatow:"+ ntriangle);
-                    int a = 0;
                     for(int i = 0; i < ntriangle; i++){
-                        br.ReadBytes(12); // normal do swiatla
-                        indicies[a] = a;
+                        byte[] normalraw = br.ReadBytes(12); // normal do swiatla
+                        float[] normal = {BitConverter.ToSingle(normalraw,0),
+                                                                BitConverter.ToSingle(normalraw,4),
+                                                                BitConverter.ToSingle(normalraw,8)
+                                                               };
                         byte[] vertex1raw = br.ReadBytes(12);
                         float[] vertex1 = {BitConverter.ToSingle(vertex1raw,0),
                                         BitConverter.ToSingle(vertex1raw,4),
                                         BitConverter.ToSingle(vertex1raw,8)
                                        };
-                        pos[a] = new Vector3(vertex1[0],vertex1[1],vertex1[2]);
-                        a++;
-                        indicies[a] = a;
+                        pos[i*3]= new Vector3(vertex1[0],vertex1[1],vertex1[2]);
+                        indicies[i*3] = i*3;
+                        normals[i*3] = new Vector3(normal[0],normal[1],normal[2]);
+
                         byte[] vertex2raw = br.ReadBytes(12);
                         float[] vertex2 = {BitConverter.ToSingle(vertex2raw,0),
                                         BitConverter.ToSingle(vertex2raw,4),
                                         BitConverter.ToSingle(vertex2raw,8)
                                        };
-                        pos[a] = new Vector3(vertex2[0],vertex2[1],vertex2[2]);
-                        a++;
-                        indicies[a] = a;
+                        pos[i*3+1]= new Vector3(vertex2[0],vertex2[1],vertex2[2]);
+                        indicies[i*3+1] = i*3+1;
+                        normals[i*3+1] = new Vector3(normal[0],normal[1],normal[2]);
+
                         byte[] vertex3raw = br.ReadBytes(12);
                         float[] vertex3 = {BitConverter.ToSingle(vertex3raw,0),
                                         BitConverter.ToSingle(vertex3raw,4),
                                         BitConverter.ToSingle(vertex3raw,8)
                                        };
-                        pos[a] = new Vector3(vertex3[0],vertex3[1],vertex3[2]);
-                        a++;
+                        pos[i*3+2]= new Vector3(vertex3[0],vertex3[1],vertex3[2]);
+                        indicies[i*3+2] = i*3+2;
+                        normals[i*3+2] = new Vector3(normal[0],normal[1],normal[2]);
+
                     br.ReadBytes(2); // Atrybuty ?
                     } 
-                    return (pos, indicies);
+                    return (pos, indicies, normals);
                 }
 
             }
-            return (null,null);
+            return (null,null,null);
         }
 
 
@@ -132,8 +152,8 @@ namespace Przegladarka3D.Core
             LocalizationManager.SetCulture(selectedLanguage);
             
 
-            camTarget = new Vector3(0f,0f,0f);
-            camPosition = new Vector3(0f,0f,200f);
+            camTarget = new Vector3(-100,200f,0f);
+            camPosition = new Vector3(0f,0f,300f);
 
             projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f),GraphicsDevice.DisplayMode.AspectRatio,1f,1000f);
 
@@ -144,20 +164,25 @@ namespace Przegladarka3D.Core
             basicEffect = new BasicEffect(GraphicsDevice);
             basicEffect.Alpha = 1.0f;
             basicEffect.VertexColorEnabled = true;
-            basicEffect.LightingEnabled = false;
 
             var model = STLReader();
-            szescianBermudzki= new VertexPositionColor[model.Item1.Length];            
+            brylka = new VertexPositionColorNormal[model.Item1.Length];
             for(int i = 0; i < model.Item1.Length; i++){
-                szescianBermudzki[i] = new VertexPositionColor(model.Item1[i], Color.Aqua);
-                i++;
-                szescianBermudzki[i] = new VertexPositionColor(model.Item1[i], Color.DarkRed);
-                i++;
-                szescianBermudzki[i] = new VertexPositionColor(model.Item1[i], Color.Orange);
+                brylka[i].Color = Color.Aqua;
+                brylka[i].Position = model.Item1[i];
+            }
+            for(int i = 0; i <model.Item3.Length;i++){
+
+             brylka[i].Normal = model.Item3[i];
             }
 
-            vertexBuffer = new VertexBuffer(GraphicsDevice, typeof(VertexPositionColor),szescianBermudzki.Length, BufferUsage.WriteOnly);
-            vertexBuffer.SetData<VertexPositionColor>(szescianBermudzki);
+
+            for(int i = 0; i < brylka.Length;i++){
+                brylka[i].Normal.Normalize();
+            }
+
+            vertexBuffer = new VertexBuffer(GraphicsDevice, VertexPositionColorNormal.VertexDeclaration ,brylka.Length, BufferUsage.WriteOnly);
+            vertexBuffer.SetData(brylka);
             
             indeksyBermudzkie = model.Item2;
             indexbuffer = new IndexBuffer(GraphicsDevice,IndexElementSize.ThirtyTwoBits,indeksyBermudzkie.Length, BufferUsage.WriteOnly);
@@ -218,6 +243,15 @@ namespace Przegladarka3D.Core
             GraphicsDevice.RasterizerState = rasterizerState1;
             GraphicsDevice.SetVertexBuffer(vertexBuffer);
             GraphicsDevice.Indices = indexbuffer;
+
+            Vector3 lightDirection = camPosition;
+            lightDirection.Normalize();
+            basicEffect.LightingEnabled = true;
+            basicEffect.PreferPerPixelLighting = true;
+            basicEffect.DirectionalLight0.Enabled = true;
+            basicEffect.DirectionalLight0.Direction = lightDirection;
+            basicEffect.DirectionalLight0.DiffuseColor = Color.White.ToVector3();
+            basicEffect.AmbientLightColor = new Vector3(0.1f);
 
             foreach (EffectPass pass in basicEffect.CurrentTechnique.Passes)
             {
