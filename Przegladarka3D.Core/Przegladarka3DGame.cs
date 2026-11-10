@@ -18,7 +18,7 @@ namespace Przegladarka3D.Core
     {
         // Resources for drawing.
         // globalnie do testu jak to dziala
-        public GraphicsDeviceManager graphicsDeviceManager;
+        private GraphicsDeviceManager graphicsDeviceManager;
         Vector3 camTarget;
         Vector3 camPosition;
         Matrix projectionMatrix; //Focal Plane tzw
@@ -137,6 +137,9 @@ namespace Przegladarka3D.Core
         /// </summary>
         protected override void Initialize()
         {
+
+            this.Window.AllowUserResizing = true;
+            //this.Window.ClientSizeChanged += new EventHandler<EventArgs>(Window_ClientSizeChanged);
             
             // Load supported languages and set the default language.
             List<CultureInfo> cultures = LocalizationManager.GetSupportedCultures();
@@ -251,7 +254,7 @@ namespace Przegladarka3D.Core
             basicEffect.DirectionalLight0.Enabled = true;
             basicEffect.DirectionalLight0.Direction = lightDirection;
             basicEffect.DirectionalLight0.DiffuseColor = Color.White.ToVector3();
-            basicEffect.AmbientLightColor = new Vector3(0.1f);
+            basicEffect.AmbientLightColor = new Vector3(0.8f);
 
             foreach (EffectPass pass in basicEffect.CurrentTechnique.Passes)
             {
