@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using System.IO;
 using System.Text;
 
-namespace Przegladarka3D.Core{
+namespace Przegladarka3D.Core.Gui{
 	public class GuiManager : Game{
 		public GuiManager(){
 			
