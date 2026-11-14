@@ -9,12 +9,18 @@ using System.IO;
 using System.Text;
 
 namespace Przegladarka3D.Core.Gui{
-	public class GuiManager : Game{
-		public GuiManager(){
+	public class GuiManager{
+		GraphicsDevice graphicsdevice;
+		public GuiManager(GraphicsDevice grapd){
+			graphicsdevice = grapd;
+		}
+		public void Init(){
 			
 		}
 
-		
+		public void Update(){
+			
+		}
 	}
 
 	
