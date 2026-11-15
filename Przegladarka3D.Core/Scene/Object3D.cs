@@ -13,6 +13,8 @@ namespace Przegladarka3D.Core.Scene;
 public abstract class Object3D{
 
 	protected Vector3 pos3d;
+	protected Vector3 rotation;
+	protected Vector3 scale;
 	public abstract void Draw(GraphicsDevice graphicsDevice, BasicEffect effect);
 
 }

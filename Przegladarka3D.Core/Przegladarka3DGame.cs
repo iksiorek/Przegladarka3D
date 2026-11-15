@@ -76,7 +76,7 @@ namespace Przegladarka3D.Core
                 Exit();
              // TODO: Add your update logic here
             _inputmgr.Update();
-//            _scenemgr.Update(_inputmgr);
+            //_scenemgr.Update(_inputmgr);
             base.Update(gameTime);
         }
 

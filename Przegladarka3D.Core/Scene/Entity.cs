@@ -19,6 +19,7 @@ public class Entity: Object3D{
 	        new VertexElement(sizeof(float) * 3 + 4, VertexElementFormat.Vector3, VertexElementUsage.Normal, 0)
 	    );
 	}
+	Matrix originModel;
 	VertexPositionColorNormal[] mesh;
 	VertexBuffer vertexBuffer;
 	IndexBuffer indexbuffer;
@@ -41,7 +42,12 @@ public class Entity: Object3D{
                 mesh[i].Normal.Normalize();
             }
 			indicies = model.Item2;
-	}
+			pos3d = GetCenterBoundingBox();
+			rotation = new Vector3(0,0,0);
+			scale = new Vector3(1,1,1);
+			originModel = Matrix.CreateScale(scale)*Matrix.CreateFromYawPitchRoll(rotation.X,rotation.Y,rotation.Z)*Matrix.CreateTranslation(pos3d.X,pos3d.Y,pos3d.Z);
+
+    }
 	public override void Draw(GraphicsDevice graphicsDevice, BasicEffect effect){
 		
             vertexBuffer = new VertexBuffer(graphicsDevice, VertexPositionColorNormal.VertexDeclaration ,mesh.Length, BufferUsage.WriteOnly);
@@ -51,11 +57,42 @@ public class Entity: Object3D{
 
 			graphicsDevice.SetVertexBuffer(vertexBuffer);
 			graphicsDevice.Indices = indexbuffer;
+			effect.World = originModel;
 
             foreach (EffectPass pass in effect.CurrentTechnique.Passes)
             {
             pass.Apply();
             graphicsDevice.DrawIndexedPrimitives(PrimitiveType.TriangleList,0,0,(indicies.Length/3));
             }
+	}
+	public Vector3 GetCenterBoundingBox(){
+		float xMin = 0;
+		float xMax = 0;
+		float yMin = 0;
+		float yMax = 0;
+		float zMin = 0;
+		float zMax = 0;
+		for(int i  = 0; i< mesh.Length;i++){
+				if(mesh[i].Position.X >= xMax){
+					xMax = mesh[i].Position.X;					
+				}else if(mesh[i].Position.X <= xMin){
+					xMin = mesh[i].Position.X;
+				}
+
+				if(mesh[i].Position.Y >= yMax){
+					yMax = mesh[i].Position.Y;					
+				}else if(mesh[i].Position.X <= yMin){
+					yMin = mesh[i].Position.Y;
+				}
+
+				if(mesh[i].Position.Z >= zMax){
+					zMax = mesh[i].Position.Z;					
+				}else if(mesh[i].Position.Z <= zMin){
+					zMin = mesh[i].Position.Z;
+				}
+		}
+		Vector3 final = new Vector3((xMin+xMax)/2,(yMin+yMax)/2,(zMin+zMax)/2);
+		Console.WriteLine(final.X+" "+final.Y+" "+final.Z);
+		return final; 
 	}
 }

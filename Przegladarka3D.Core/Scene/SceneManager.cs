@@ -13,7 +13,6 @@ namespace Przegladarka3D.Core.Scene;
 
 public class SceneManager{
 
-	Matrix worldMatrix;
 	BasicEffect basicEffect;
 	GraphicsDevice gdcard;
 	Kamera _camera;
@@ -28,7 +27,6 @@ public class SceneManager{
 		_camera = new Kamera();
         _camera.CreatePerspectiveFOV(45,gdcard,1f,1000f);
 		_konwerter = new();
-		worldMatrix = Matrix.CreateWorld(_camera.camTarget, Vector3.Forward, Vector3.Up);
 		basicEffect = new BasicEffect(gdcard);
 		basicEffect.Alpha = 1.0f;
 		basicEffect.VertexColorEnabled = true;
@@ -36,7 +34,7 @@ public class SceneManager{
 	public void Draw(){
             basicEffect.Projection = _camera.projectionMatrix;
             basicEffect.View = _camera.viewMatrix;
-            basicEffect.World = worldMatrix;
+            //basicEffect.World = worldMatrix;
             
             gdcard.Clear(Color.White);
             
