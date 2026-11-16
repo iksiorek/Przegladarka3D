@@ -57,7 +57,7 @@ namespace Przegladarka3D.Core
         /// </summary>
         protected override void LoadContent()
         {
-            bryla = new("/run/media/andrzei/Zaraza/Repozytorium/CSharpGame/model/teapot_bin.stl", _scenemgr._konwerter);
+            bryla = new("", _scenemgr._konwerter);
             _scenemgr.Entitytest.Add(bryla);
             base.LoadContent();
         }
@@ -75,8 +75,8 @@ namespace Przegladarka3D.Core
                 || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
              // TODO: Add your update logic here
-            _inputmgr.Update();
-            //_scenemgr.Update(_inputmgr);
+            _inputmgr.Update(gameTime);
+            _scenemgr.Update(_inputmgr);
             base.Update(gameTime);
         }
 

@@ -1,5 +1,4 @@
 using Przegladarka3D.Core.Gui;
-using System;
 namespace Przegladarka3D.Core.Scene;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -42,7 +41,7 @@ public class Entity: Object3D{
                 mesh[i].Normal.Normalize();
             }
 			indicies = model.Item2;
-			pos3d = GetCenterBoundingBox();
+			pos3d = GetCenterBoundingBox() * new Vector3(-1,-1,-1);
 			rotation = new Vector3(0,0,0);
 			scale = new Vector3(1,1,1);
 			originModel = Matrix.CreateScale(scale)*Matrix.CreateFromYawPitchRoll(rotation.X,rotation.Y,rotation.Z)*Matrix.CreateTranslation(pos3d.X,pos3d.Y,pos3d.Z);
@@ -66,12 +65,12 @@ public class Entity: Object3D{
             }
 	}
 	public Vector3 GetCenterBoundingBox(){
-		float xMin = 0;
-		float xMax = 0;
-		float yMin = 0;
-		float yMax = 0;
-		float zMin = 0;
-		float zMax = 0;
+		float xMin = float.MaxValue;
+		float xMax = float.MinValue;
+		float yMin = float.MaxValue;
+		float yMax = float.MinValue;
+		float zMin = float.MaxValue;
+		float zMax = float.MinValue;
 		for(int i  = 0; i< mesh.Length;i++){
 				if(mesh[i].Position.X >= xMax){
 					xMax = mesh[i].Position.X;					
@@ -81,7 +80,7 @@ public class Entity: Object3D{
 
 				if(mesh[i].Position.Y >= yMax){
 					yMax = mesh[i].Position.Y;					
-				}else if(mesh[i].Position.X <= yMin){
+				}else if(mesh[i].Position.Y <= yMin){
 					yMin = mesh[i].Position.Y;
 				}
 
@@ -91,8 +90,6 @@ public class Entity: Object3D{
 					zMin = mesh[i].Position.Z;
 				}
 		}
-		Vector3 final = new Vector3((xMin+xMax)/2,(yMin+yMax)/2,(zMin+zMax)/2);
-		Console.WriteLine(final.X+" "+final.Y+" "+final.Z);
-		return final; 
+		return new Vector3((xMin+xMax)/2,(yMin+yMax)/2,(zMin+zMax)/2); 
 	}
 }
