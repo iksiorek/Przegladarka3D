@@ -1,4 +1,3 @@
-
 using System;
 using Przegladarka3D.Core.Localization;
 using System.Collections.Generic;
@@ -58,22 +57,28 @@ public class SceneManager{
 	}
 	public void Update(InputManager iomanager){
 		if(iomanager.IsKeyDown(Keys.Left)){
-			_camera.Rotate(1f,0);
+			_camera.Rotate(1f,0,0);
 		}
 		if(iomanager.IsKeyDown(Keys.Right)){
-			_camera.Rotate(-1f,0);
+			_camera.Rotate(-1f,0,0);
 		}
 		if(iomanager.IsKeyDown(Keys.Up)){
-			_camera.Rotate(0,1f);
+			_camera.Rotate(0,1f,0);
 		}
 		if(iomanager.IsKeyDown(Keys.Down)){
-			_camera.Rotate(0,-1f);
+			_camera.Rotate(0,-1f,0);
 		}
 		if(iomanager.IsKeyPressed(Keys.A)){
 			_camera.Zoom(10);
 		}
 		if(iomanager.IsKeyPressed(Keys.Z)){
 			_camera.Zoom(-10);
+		}
+		if(iomanager.IsKeyDown(Keys.Q)){
+			_camera.Rotate(0,0,1);
+		}
+		if(iomanager.IsKeyDown(Keys.E)){
+			_camera.Rotate(0,0,-1);
 		}
 	}
 }
@@ -92,8 +97,8 @@ public class Kamera{
             projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(angle),gd.DisplayMode.AspectRatio,nearplane,farplane);
 		
 	}
-	public void Rotate(float yaw, float pitch){
-	    Matrix obrot = Matrix.CreateFromYawPitchRoll(MathHelper.ToRadians(yaw),MathHelper.ToRadians(pitch),0f);
+	public void Rotate(float yaw, float pitch, float roll){
+	    Matrix obrot = Matrix.CreateFromYawPitchRoll(MathHelper.ToRadians(yaw),MathHelper.ToRadians(pitch),MathHelper.ToRadians(roll));
         camPosition = Vector3.Transform(camPosition, obrot);
 		viewMatrix = Matrix.CreateLookAt(camPosition, camTarget, Vector3.Up);
 	}

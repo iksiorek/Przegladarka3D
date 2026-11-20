@@ -20,7 +20,6 @@ namespace Przegladarka3D.Core
 
         public Przegladarka3DGame()
         {
-
             graphicsDeviceManager = new GraphicsDeviceManager(this);
             Services.AddService(typeof(GraphicsDeviceManager), graphicsDeviceManager);
             Content.RootDirectory = "Content";
@@ -35,6 +34,7 @@ namespace Przegladarka3D.Core
         /// </summary>
         protected override void Initialize()
         {
+        graphicsDeviceManager.PreferMultiSampling= true;
             this.Window.AllowUserResizing = true;
             _scenemgr = new(graphicsDeviceManager.GraphicsDevice);
 
@@ -57,7 +57,7 @@ namespace Przegladarka3D.Core
         /// </summary>
         protected override void LoadContent()
         {
-            bryla = new("", _scenemgr._konwerter);
+            bryla = new("/run/media/andrzei/Pr_ca/Repozytorium/Przegladarka3D/model/teapot_bin.stl", _scenemgr._konwerter);
             _scenemgr.Entitytest.Add(bryla);
             base.LoadContent();
         }
