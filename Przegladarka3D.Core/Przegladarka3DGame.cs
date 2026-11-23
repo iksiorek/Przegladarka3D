@@ -1,9 +1,7 @@
-using System;
 using Przegladarka3D.Core.Localization;
 using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Przegladarka3D.Core.Scene;
 using Przegladarka3D.Core.Gui;
@@ -34,6 +32,7 @@ namespace Przegladarka3D.Core
         /// </summary>
         protected override void Initialize()
         {
+        IsMouseVisible = true;
         graphicsDeviceManager.PreferMultiSampling= true;
             this.Window.AllowUserResizing = true;
             _scenemgr = new(graphicsDeviceManager.GraphicsDevice);
@@ -57,7 +56,7 @@ namespace Przegladarka3D.Core
         /// </summary>
         protected override void LoadContent()
         {
-            bryla = new("/run/media/andrzei/Pr_ca/Repozytorium/Przegladarka3D/model/teapot_bin.stl", _scenemgr._konwerter);
+            bryla = new("", _scenemgr._konwerter);
             _scenemgr.Entitytest.Add(bryla);
             base.LoadContent();
         }

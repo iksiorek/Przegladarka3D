@@ -4,22 +4,27 @@ using System.Collections.Generic;
 using System.Globalization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System.IO;
-using System.Text;
 
 namespace Przegladarka3D.Core.Gui{
 	public class GuiManager{
 		GraphicsDevice graphicsdevice;
+		SpriteBatch spriteBatch;
 		public GuiManager(GraphicsDevice grapd){
 			graphicsdevice = grapd;
+			spriteBatch = new SpriteBatch(graphicsdevice);
 		}
 		public void Init(){
 			
 		}
 
-		public void Update(){
+		public void Update(InputManager iomanager){
 			
+		}
+		public void Draw(){
+			spriteBatch.Begin();
+
+
+			spriteBatch.End();
 		}
 	}
 
