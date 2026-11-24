@@ -48,7 +48,6 @@ public class SceneManager{
 			foreach(var entry in Entitytest){
 				entry.Draw(gdcard,basicEffect);
 			}
-
 	}
 	public void Update(InputManager iomanager){
 		if(iomanager.GetButtonMouseState(MouseButton.Left)){
